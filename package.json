@@ -1,36 +1,39 @@
 {
-	"name": "equichain-webapp",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-    "test": "",
-		"prepare": "husky install"
-	},
-	"dependencies": {
-		"next": "latest",
-		"react": "latest",
-		"react-dom": "latest"
-	},
-	"devDependencies": {
-		"@types/node": "latest",
-		"@types/react": "latest",
-		"@types/react-dom": "latest",
-		"autoprefixer": "latest",
-		"eslint": "latest",
-		"eslint-config-next": "latest",
-		"husky": "^8.0.3",
-		"postcss": "latest",
-		"tailwindcss": "latest",
-		"typescript": "latest"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"pre-push": "npm test"
-		}
-	}
+    "name": "equichain-webapp",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "test": "",
+        "prepare": "husky install",
+        "prettier": "prettier . --write",
+        "prettier:check": "prettier . --check"
+    },
+    "dependencies": {
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "latest",
+        "@types/react": "latest",
+        "@types/react-dom": "latest",
+        "autoprefixer": "latest",
+        "eslint": "latest",
+        "eslint-config-next": "latest",
+        "husky": "^8.0.3",
+        "postcss": "latest",
+        "prettier": "3.0.3",
+        "tailwindcss": "latest",
+        "typescript": "latest"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && npm prettier:check",
+            "pre-push": "npm test && npm run build && npm prettier"
+        }
+    }
 }
