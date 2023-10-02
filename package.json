@@ -19,7 +19,14 @@
             "pre-rebase": "npm test && npm run build && npm prettier"
         }
     },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ]
+    },
     "dependencies": {
+        "husky-init": "^8.0.0",
         "next": "latest",
         "react": "latest",
         "react-dom": "latest"
@@ -39,7 +46,8 @@
         "eslint-plugin-n": "^16.1.0",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-react": "^7.33.2",
-        "husky": "^8.0.3",
+        "husky": "^8.0.0",
+        "lint-staged": "^14.0.1",
         "postcss": "latest",
         "prettier": "^3.0.3",
         "tailwindcss": "latest",
