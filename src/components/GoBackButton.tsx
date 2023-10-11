@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC } from "react";
-import { buttonVariants } from "./ui/button";
+import { buttonVariants } from "./ui/Button";
 import { ChevronLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 
