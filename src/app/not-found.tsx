@@ -1,4 +1,4 @@
-import GoBackButton from "@/components/GoBackButton";
+import { GoBackButton } from "@/components";
 
 const NotFound = () => {
     return (
