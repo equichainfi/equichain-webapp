@@ -5,8 +5,9 @@ declare global {
         title: string;
         slug: string;
         desription: string;
+        images: string[];
 
-        status: string; //todo enum
+        status: "pending" | "active" | "sold" | "inactive";
         isVerified: boolean;
         price: number;
         chain: string; //todo enum
