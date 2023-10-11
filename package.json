@@ -27,9 +27,11 @@
         ]
     },
     "dependencies": {
+        "@neondatabase/serverless": "^0.6.0",
         "@radix-ui/react-slot": "^1.0.2",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
+        "drizzle-orm": "^0.28.6",
         "husky-init": "^8.0.0",
         "lucide-react": "^0.284.0",
         "next": "latest",
@@ -47,6 +49,7 @@
         "@typescript-eslint/parser": "^6.7.3",
         "autoprefixer": "latest",
         "commitlint": "^17.7.2",
+        "drizzle-kit": "^0.19.13",
         "eslint": "^8.50.0",
         "eslint-config-next": "latest",
         "eslint-config-prettier": "^9.0.0",
