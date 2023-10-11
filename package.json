@@ -27,10 +27,16 @@
         ]
     },
     "dependencies": {
+        "@radix-ui/react-slot": "^1.0.2",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.0.0",
         "husky-init": "^8.0.0",
+        "lucide-react": "^0.284.0",
         "next": "latest",
         "react": "latest",
-        "react-dom": "latest"
+        "react-dom": "latest",
+        "tailwind-merge": "^1.14.0",
+        "tailwindcss-animate": "^1.0.7"
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^17.7.0",
@@ -54,6 +60,7 @@
         "postcss": "latest",
         "prettier": "^3.0.3",
         "tailwindcss": "latest",
-        "typescript": "^5.2.2"
+        "typescript": "^5.2.2",
+        "zod": "^3.22.4"
     }
 }

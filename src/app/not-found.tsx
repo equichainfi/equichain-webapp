@@ -1,10 +1,10 @@
-import React from "react";
+import { GoBackButton } from "@/components";
 
 const NotFound = () => {
     return (
-        <div className="flex justify-center items-center h-screen w-screen">
-            NotFound
-        </div>
+        <section className="flex justify-center items-center h-screen w-screen">
+            <GoBackButton />
+        </section>
     );
 };
 
