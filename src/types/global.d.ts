@@ -14,14 +14,14 @@ declare global {
 
         area: string;
 
-        createdAt: string; //todo date
-        updatedAt: string; //todo date
+        createdAt: Date;
+        updatedAt: Date;
 
         purpose: string; //todo enum
 
         views: number;
         saves: number;
-        lastViewed: string; //todo date
+        lastViewed: Date;
         listedBy: string; //todo enum (user, admin)
     }
 }
