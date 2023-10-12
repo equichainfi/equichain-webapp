@@ -15,9 +15,9 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged && npm prettier && npm run lint",
-            "pre-push": "npm test && npm run build && npm prettier",
-            "pre-rebase": "npm test && npm run build && npm prettier"
+            "pre-commit": "npm prettier && lint-staged && npm run lint",
+            "pre-push": "npm prettier && npm test && npm run build",
+            "pre-rebase": "npm prettier && npm test && npm run build"
         }
     },
     "lint-staged": {
