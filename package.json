@@ -28,10 +28,11 @@
     },
     "dependencies": {
         "@radix-ui/react-slot": "^1.0.2",
+        "axios": "^1.5.1",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
         "husky-init": "^8.0.0",
-        "lucide-react": "^0.284.0",
+        "lucide-react": "^0.286.0",
         "next": "latest",
         "react": "latest",
         "react-dom": "latest",
@@ -47,6 +48,7 @@
         "@typescript-eslint/parser": "^6.7.3",
         "autoprefixer": "latest",
         "commitlint": "^17.7.2",
+        "dotenv": "^16.3.1",
         "eslint": "^8.50.0",
         "eslint-config-next": "latest",
         "eslint-config-prettier": "^9.0.0",
@@ -60,7 +62,6 @@
         "postcss": "latest",
         "prettier": "^3.0.3",
         "tailwindcss": "latest",
-        "typescript": "^5.2.2",
-        "zod": "^3.22.4"
+        "typescript": "^5.2.2"
     }
 }
