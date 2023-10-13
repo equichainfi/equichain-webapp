@@ -1,5 +1,4 @@
 import { date, pgTable, serial, varchar } from "drizzle-orm/pg-core";
-import { Session, Account, Post } from ".";
 
 export const User = pgTable("User", {
     id: serial("id").primaryKey(),
@@ -10,10 +9,6 @@ export const User = pgTable("User", {
     username: varchar("username", { length: 64 }).notNull().unique(),
     image: varchar("image", { length: 256 }).notNull(),
 
-    accounts: Account.array().notNull(),
-    sessions: Session.array().notNull(),
-    post: Post.array().notNull(),
-    // savedPost:
-    // comment:
-    // likedComment:
+    // session: Session.array().notNull(),
+    // likePosts: Like.array().notNull(),
 });
