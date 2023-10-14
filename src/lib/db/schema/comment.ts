@@ -5,11 +5,9 @@ export const Comment = pgTable("Comment", {
     id: serial("id").primaryKey(),
     text: text("text").notNull(),
     createdAt: timestamp("created_at").notNull(),
-    // author: User.object().notNull(),
     authorId: serial("author_id")
         .references(() => User.id)
         .notNull(),
-    // post: Post.object().notNull(),
     postId: serial("post_id")
         .references(() => Post.id)
         .notNull(),
