@@ -5,6 +5,7 @@ import { Comment } from "./comment";
 import { CommentLike } from "./commentLike";
 import { User } from "./user";
 import { Like } from "./like";
+import { Wallet } from "./wallet";
 
 import { postEnum, postCategoryEnum } from "./enums";
 
@@ -18,4 +19,5 @@ export {
     Comment,
     CommentLike,
     Like,
+    Wallet,
 };

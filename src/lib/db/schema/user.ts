@@ -14,6 +14,4 @@ export const User = pgTable("User", {
         .references(() => Wallet.address)
         .array()
         .notNull(),
-    // session: Session.array().notNull(),
-    // likePosts: Like.array().notNull(),
 });
