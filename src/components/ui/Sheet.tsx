@@ -14,11 +14,13 @@ const SheetTrigger = SheetPrimitive.Trigger;
 
 const SheetClose = SheetPrimitive.Close;
 
-const SheetPortal = ({
-    className,
-    ...props
-}: SheetPrimitive.DialogPortalProps) => (
-    <SheetPrimitive.Portal className={cn(className)} {...props} />
+interface SheetPortalProps extends SheetPrimitive.DialogPortalProps {
+    className?: string;
+}
+
+const SheetPortal = ({ className, ...props }: SheetPortalProps) => (
+    // @ts-expect-error - `className` is not a valid prop for `Portal`
+    <SheetPrimitive.Portal {...props} className={cn(className)} />
 );
 SheetPortal.displayName = SheetPrimitive.Portal.displayName;
 
