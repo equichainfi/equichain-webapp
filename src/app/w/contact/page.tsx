@@ -1,7 +1,3 @@
-import React from "react";
-
-const Page = () => {
+export default function Page() {
     return <div>Contact</div>;
-};
-
-export default Page;
+}

@@ -1,7 +1,7 @@
 import { Logo } from "../../public";
 import Image from "next/image";
 
-const Loading = () => {
+export default function Loading() {
     return (
         <main className="flex justify-center items-center h-screen w-screen">
             <Image
@@ -13,6 +13,4 @@ const Loading = () => {
             />
         </main>
     );
-};
-
-export default Loading;
+}

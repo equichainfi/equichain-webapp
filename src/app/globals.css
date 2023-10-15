@@ -6,6 +6,9 @@
     .footer {
         @apply bg-primary text-white w-screen flex;
     }
+    .header {
+        @apply bg-primary text-white w-screen flex;
+    }
 }
 
 @layer utilities {

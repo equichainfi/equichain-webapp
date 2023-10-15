@@ -1,7 +1,3 @@
-import React from "react";
-
-const Page = () => {
+export default function Page() {
     return <div>Terms of Policy</div>;
-};
-
-export default Page;
+}
