@@ -7,13 +7,14 @@ import Footer from "./constants/Footer";
 // UI
 import { ScrollArea } from "./ui/ScrollArea";
 import { Button } from "./ui/Button";
-import { Sheet } from "./ui/sheet";
-import { SheetTrigger } from "./ui/sheet";
-import { SheetContent } from "./ui/sheet";
-import { SheetHeader } from "./ui/sheet";
-import { SheetTitle } from "./ui/sheet";
-import { SheetDescription } from "./ui/sheet";
-import { Separator } from "./ui/separator";
+import {
+    Sheet,
+    SheetTrigger,
+    SheetContent,
+    SheetHeader,
+    SheetTitle,
+    SheetDescription,
+} from "./ui/Sheet";
 
 export {
     GoBackButton,
@@ -28,5 +29,4 @@ export {
     SheetHeader,
     SheetTitle,
     SheetDescription,
-    Separator,
 };
