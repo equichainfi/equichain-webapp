@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .footer {
+        @apply bg-primary text-white w-screen flex;
+    }
+}
+
+@layer utilities {
+    .bg-primary {
+        background-color: #0038ff;
+    }
+    .text-primary {
+        color: #0038ff;
+    }
+}
