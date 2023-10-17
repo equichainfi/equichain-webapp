@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu } from "lucide-react";
+import { HomeIcon, LandPlot, Menu, Moon, User2 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
@@ -16,6 +16,13 @@ import { FullWhite } from "../../../public";
 
 export default function Header() {
     const router = useRouter();
+
+    const buttons = [
+        { value: "Go to homepage", icon: <HomeIcon /> },
+        { value: "Buy Land", icon: <LandPlot /> },
+        { value: "Sell Land", icon: <LandPlot /> },
+        { value: "My Profile", icon: <User2 /> },
+    ];
 
     return (
         <div className="container-flex header">
@@ -49,17 +56,22 @@ export default function Header() {
                                 width={220}
                             />
                         </SheetTitle>
-                        <SheetDescription className="grid grid-cols-2 sm:grid-cols-2 place-content-start">
-                            <Button>Button x</Button>
-                            <Button>Button x</Button>
-                            <Button>Button x</Button>
-                            <Button>Button x</Button>
-                            <Button>Button x</Button>
-                            <Button>Button x</Button>
-                            <Button>Button x</Button>
-                            <Button>Button x</Button>
-                        </SheetDescription>
                     </SheetHeader>
+                    <SheetDescription className="grid grid-cols-2 gap-x-2 gap-y-1 sm:grid-cols-2 place-content-start pt-5">
+                        {/* todo: fix global classnames */}
+                        {buttons.map((btn, index) => (
+                            <Button
+                                key={index}
+                                onClick={() => router.push("/")}
+                                className="button-nav rounded-xl justify-start"
+                            >
+                                {btn.icon} <p>{btn.value}</p>
+                            </Button>
+                        ))}
+                    </SheetDescription>
+                    <Button className="absolute bottom-4 right-4">
+                        <Moon />
+                    </Button>
                 </SheetContent>
             </Sheet>
 
