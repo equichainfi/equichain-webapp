@@ -14,7 +14,6 @@
 </p>
 </main>
 
-
 <section>
     <h1>Equichain.fi</h1>
     <p>Introducing a cutting-edge Real Estate Marketplace for the modern era – the ultimate intersection of technology, blockchain, and real estate investment.
@@ -38,4 +37,5 @@ Our NFT Real Estate Marketplace connects prospective investors with prime real e
 Experience a user-friendly interface, real-time property listings, and seamless payment processing with our PostgreSQL (PgSQL) integration. Your real estate journey has never been this smooth.
 
 Join us on the forefront of real estate innovation. Explore unique properties, secure your investments, and become part of the blockchain revolution. Your future in real estate starts here.</p>
+
 </section>
