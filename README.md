@@ -1,17 +1,12 @@
-<main style="display: flex; justify-content: space-between;">
-    <p align="end">
+<main>
+<div align="center">
+    <img src="public/images/logo.svg" alt="equichain logo" />
+</div>
+    <p align="center">
         <a href="https://github.com/equichainfi/equichain-webapp">
-            <img src="https://skillicons.dev/icons?i=docker,figma,gcp,ipfs,nextjs,nodejs&perline=1" />
+            <img src="https://skillicons.dev/icons?i=docker,figma,gcp,ipfs,nextjs,nodejs,postgres,redis,solidity,tailwind,ts,vercel" />
         </a>
     </p>
-    <div style="display: flex; justify-content: center; padding-bottom: 20px;">
-    <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/113932706/277181882-f6549431-0705-4f3e-b961-4810c2573598.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20231022%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231022T173155Z&X-Amz-Expires=300&X-Amz-Signature=5eef9efcfed1cd25e07a37bb64a32ffdf4f07c131b580054906f3b3df21b288c&X-Amz-SignedHeaders=host&actor_id=113932706&key_id=0&repo_id=698927857" alt="equichain logo" />
-</div>
-<p align="start">
-    <a href="https://github.com/equichainfi/equichain-webapp">
-        <img src="https://skillicons.dev/icons?i=postgres,redis,solidity,tailwind,ts,vercel&perline=1" />
-    </a>
-</p>
 </main>
 
 <section>
