@@ -8,11 +8,11 @@
         "start": "next start",
         "lint": "next lint",
         "lint-staged": "next lint --fix",
-        "test": "",
+        "test": "vitest",
         "prepare": "husky install",
         "prettier": "prettier . --write",
         "prettier:check": "prettier . --check",
-        "check": "lint-staged && npm run prettier && npm run lint"
+        "check": "lint-staged && npm run prettier && npm run lint && npm run test"
     },
     "husky": {
         "hooks": {
