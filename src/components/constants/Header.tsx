@@ -1,86 +1,50 @@
 "use client";
 
-import { HomeIcon, LandPlot, Menu, Moon, User2 } from "lucide-react";
+import { Dot, HomeIcon, LandPlot } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import {
-    Button,
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from "..";
+import Link from "next/link";
+import { Button } from "..";
 import { FullWhite } from "../../../public";
 
 export default function Header() {
-    const router = useRouter();
-
-    const buttons = [
-        { value: "Go to homepage", icon: <HomeIcon /> },
-        { value: "Buy Land", icon: <LandPlot /> },
-        { value: "Sell Land", icon: <LandPlot /> },
-        { value: "My Profile", icon: <User2 /> },
+    const navOptions = [
+        { value: "Buy Properties", icon: <HomeIcon />, link: "/homes" },
+        { value: "Buy Land", icon: <LandPlot />, link: "/lands" },
+        { value: "Sell", icon: <LandPlot />, link: "/sell" },
     ];
 
     return (
-        <div className="container-flex header">
-            {/* Need logo resolution fix */}
-            <Image
-                src={FullWhite}
-                className="cursor-pointer w-56 sm:w-72"
-                onClick={() => router.push("/")}
-                alt="logo"
-                width={1}
-            />
-
-            <Sheet>
-                <SheetTrigger className="flex md:hidden">
-                    <Menu
-                        size={30}
-                        className="hover:text-primary transition ease-in-out"
+        <div className="container-flex border-b-2 border-primary items-center justify-between bg-white w-screen">
+            <option className="flex items-center">
+                {/* Need logo resolution fix */}
+                <Link href="/">
+                    <Image
+                        src={FullWhite}
+                        className="cursor-pointer w-56 sm:w-72"
+                        alt="logo"
+                        width={1}
                     />
-                </SheetTrigger>
-                <SheetContent
-                    className="w-screen h-screen bg-white"
-                    side={"top"}
-                >
-                    <SheetHeader>
-                        <SheetTitle>
-                            <Image
-                                src={FullWhite}
-                                className="cursor-pointer"
-                                onClick={() => router.push("/")}
-                                alt="logo"
-                                width={220}
-                            />
-                        </SheetTitle>
-                    </SheetHeader>
-                    <SheetDescription className="grid grid-cols-2 gap-x-2 gap-y-1 sm:grid-cols-2 place-content-start pt-5">
-                        {/* todo: fix global classnames */}
-                        {buttons.map((btn, index) => (
-                            <Button
-                                key={index}
-                                onClick={() => router.push("/")}
-                                className="button-nav rounded-xl justify-start"
-                            >
-                                {btn.icon} <p>{btn.value}</p>
-                            </Button>
-                        ))}
-                    </SheetDescription>
-                    <Button className="absolute bottom-4 right-4">
-                        <Moon />
-                    </Button>
-                </SheetContent>
-            </Sheet>
+                </Link>
 
-            <section className="hidden md:flex items-center justify-between gap-x-16 lg:gap-x-20">
-                <p>Hello</p>
-                <p>Hello</p>
-                <p>Hello</p>
+                {navOptions.map((btn, index) => (
+                    <Link href={btn.link} key={index}>
+                        <Button
+                            className="text-black hover:opacity-60 duration-300 transition ease-in-out"
+                            variant={"default"}
+                        >
+                            {btn.value}
+                        </Button>
+                    </Link>
+                ))}
+            </option>
+
+            <section className="flex items-center justify-between">
+                <Button className="xl:p-0 pr-3 hidden md:flex">Log in</Button>
+                <Dot className="hidden xl:flex" />
+                <Button className="bg-black rounded-full text-white font-semibold">
+                    Sign up
+                </Button>
             </section>
-            <h1 className="hidden md:flex">Account</h1>
         </div>
     );
 }
