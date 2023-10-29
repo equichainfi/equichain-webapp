@@ -10,7 +10,7 @@
         @apply shadow-md items-center justify-between bg-white w-screen;
     }
     .container-flex {
-        @apply px-2 py-5 flex sm:px-10 sm:py-7 lg:px-16 xl:px-20 2xl:px-24;
+        @apply px-2 py-5 flex sm:px-10 lg:px-16 xl:px-20 2xl:px-24;
     }
     .button {
         @apply px-4 py-2 rounded-md font-semibold text-lg bg-white;
