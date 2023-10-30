@@ -28,6 +28,11 @@
         ]
     },
     "dependencies": {
+        "@clerk/localizations": "^1.26.7",
+        "@clerk/nextjs": "^4.26.1",
+        "@clerk/themes": "^1.7.9",
+        "@mantine/core": "^7.1.7",
+        "@mantine/hooks": "^7.1.7",
         "@neondatabase/serverless": "^0.6.0",
         "@radix-ui/react-accordion": "^1.1.2",
         "@radix-ui/react-dialog": "^1.0.5",
@@ -38,6 +43,7 @@
         "axios": "^1.5.1",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
+        "cmdk": "^0.2.0",
         "drizzle-orm": "^0.28.6",
         "husky-init": "^8.0.0",
         "next": "latest",
@@ -48,6 +54,7 @@
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^17.7.0",
+        "@tanstack/react-query": "^5.4.3",
         "@types/node": "latest",
         "@types/react": "latest",
         "@types/react-dom": "latest",
@@ -71,6 +78,7 @@
         "lucide-react": "^0.287.0",
         "postcss": "latest",
         "prettier": "^3.0.3",
+        "sharp": "^0.32.6",
         "tailwindcss": "latest",
         "typescript": "^5.2.2",
         "vitest": "^0.34.6"

@@ -21,6 +21,9 @@
     .LeftSidebarOption {
         @apply flex whitespace-nowrap text-base items-center gap-x-2 text-black hover:opacity-60 duration-300 transition ease-in-out;
     }
+    .signing-page {
+        @apply w-screen h-screen fixed z-50 top-0 bg-white flex items-center justify-center;
+    }
 }
 
 @layer utilities {
@@ -35,4 +38,15 @@
 ::selection {
     background-color: #0038ff;
     color: #fff;
+}
+
+.cl-formButtonPrimary {
+    font-size: 14px;
+    text-transform: none;
+    background-color: #0038ff;
+}
+.cl-formButtonPrimary:hover,
+.cl-formButtonPrimary:focus,
+.cl-formButtonPrimary:active {
+    background-color: #0038ff;
 }

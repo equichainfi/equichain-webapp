@@ -1,7 +1,7 @@
-import { Footer, Header } from "@/components";
-import "./globals.css";
+import { Footer, Header, Providers } from "@/components";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,16 +12,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
+    authModal,
 }: {
     children: React.ReactNode;
+    authModal: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-            <body className={inter.className}>
-                <Header />
-                {children}
-                <Footer />
-            </body>
-        </html>
+        <Providers>
+            <html lang="en">
+                <body className={inter.className}>
+                    {authModal}
+                    <Header />
+                    {children}
+                    <Footer />
+                </body>
+            </html>
+        </Providers>
     );
 }

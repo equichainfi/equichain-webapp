@@ -1,5 +1,6 @@
 import GoBackButton from "./GoBackButton";
 import Post from "./Post";
+import Providers from "./Providers";
 
 // Constants
 import Header from "./constants/Header";
@@ -48,4 +49,5 @@ export {
     AccordionItem,
     AccordionTrigger,
     Separator,
+    Providers,
 };
