@@ -40,3 +40,9 @@ next-env.d.ts
 
 # husky
 .husky
+
+# generated
+src/lib/db/generated
+
+# husky
+.husky

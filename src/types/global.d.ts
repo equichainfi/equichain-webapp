@@ -11,12 +11,4 @@ declare global {
         hideOn?: string;
         showOn?: string;
     };
-    enum ShowHideOn {
-        "0" = "",
-        "sm" = "sm:",
-        "md" = "md:",
-        "lg" = "lg:",
-        "xl" = "xl:",
-        "xxl" = "2xl:",
-    }
 }
