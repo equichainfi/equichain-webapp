@@ -1,3 +1,3 @@
 export default function Page() {
-    return <div>Property</div>;
+    return <div>Land Page</div>;
 }
