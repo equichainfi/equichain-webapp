@@ -27,7 +27,7 @@ export const navOptions: NavOptions = [
 ];
 
 export default function Header() {
-    const [showSidebar, setShowSidebar] = useState<boolean>(true);
+    const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
     return (
         <div className="px-2 py-5 flex sm:px-10 lg:px-16 xl:px-20 2xl:px-24 justify-between bg-white w-screen">
