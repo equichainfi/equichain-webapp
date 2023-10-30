@@ -5,6 +5,7 @@ import Post from "./Post";
 import Header from "./constants/Header";
 import Footer from "./constants/Footer";
 import Logo from "./constants/Logo";
+import LeftSidebar from "./constants/LeftSideBar";
 
 // UI
 import { ScrollArea } from "./ui/ScrollArea";
@@ -18,6 +19,13 @@ import {
     SheetDescription,
 } from "./ui/Sheet";
 import { HoverCard } from "./ui/HoverCard";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "./ui/Accordion";
+import { Separator } from "./ui/Separator";
 
 export {
     GoBackButton,
@@ -25,6 +33,7 @@ export {
     Header,
     Footer,
     Logo,
+    LeftSidebar,
     ScrollArea,
     Button,
     Sheet,
@@ -34,4 +43,9 @@ export {
     SheetTitle,
     SheetDescription,
     HoverCard,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+    Separator,
 };
