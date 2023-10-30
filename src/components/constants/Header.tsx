@@ -1,22 +1,66 @@
 "use client";
 
-import { Dot } from "lucide-react";
+import {
+    Bitcoin,
+    Dot,
+    HeartHandshake,
+    Hotel,
+    LandPlot,
+    LifeBuoy,
+    ShieldCheck,
+    User,
+} from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { Button, Logo } from "..";
+import { useState } from "react";
+import { Button, LeftSidebar, Logo } from "..";
+import { SmallLogoPlain } from "../../../public";
+
+export const navOptions: NavOptions = [
+    { value: "Buy Properties", link: "/homes", icon: <Hotel /> },
+    { value: "Buy Land", link: "/lands", icon: <LandPlot /> },
+    { value: "Sell", link: "/sell", icon: <Bitcoin /> },
+    { value: "Dashboard", link: "/dashboard", icon: <User /> },
+    { value: "Safety", link: "/w/safety", icon: <ShieldCheck /> },
+    { value: "Contact", link: "/w/contact", icon: <LifeBuoy /> },
+    { value: "Terms of Policy", link: "/w/terms", icon: <HeartHandshake /> },
+];
 
 export default function Header() {
-    const navOptions: NavOptions = [
-        { value: "Buy Properties", link: "/homes" },
-        { value: "Buy Land", link: "/lands" },
-        { value: "Sell", link: "/sell" },
-    ];
+    const [showSidebar, setShowSidebar] = useState<boolean>(true);
 
     return (
-        <div className="container-flex 2xl:grid 2xl:grid-cols-3 items-center justify-between bg-white w-screen">
+        <div className="px-2 py-5 flex sm:px-10 lg:px-16 xl:px-20 2xl:px-24 justify-between bg-white w-screen">
+            <Button
+                className="p-0 sm:hidden"
+                variant={"default"}
+                onClick={() => setShowSidebar(!showSidebar)}
+            >
+                <Image
+                    src={SmallLogoPlain}
+                    className="cursor-pointer w-10"
+                    alt="equichain logo"
+                    width={1}
+                    height={1}
+                />
+            </Button>
+
+            <section className="sm:hidden block">
+                {showSidebar && (
+                    <nav className="fixed top-0 left-0 w-full h-full z-50 flex">
+                        <LeftSidebar />
+                        <button
+                            className="w-1/2 h-full bg-white bg-opacity-25 blur-lg"
+                            onClick={() => setShowSidebar(!showSidebar)}
+                        />
+                    </nav>
+                )}
+            </section>
+
             <option className="flex 2xl:hidden items-center">
-                <Logo showOn="" hideOn="2xl:" />
+                <Logo showOn="sm:" hideOn="2xl:" />
                 <div className="hidden sm:flex">
-                    {navOptions.map((btn, index) => (
+                    {navOptions.slice(0, 3).map((btn, index) => (
                         <Link href={btn.link} key={index}>
                             <Button
                                 className="text-black hover:opacity-60 duration-300 transition ease-in-out"
@@ -29,8 +73,9 @@ export default function Header() {
                 </div>
             </option>
 
+            {/*  */}
             <div className="hidden 2xl:flex items-center justify-start">
-                {navOptions.map((btn, index) => (
+                {navOptions.slice(0, 3).map((btn, index) => (
                     <Link href={btn.link} key={index}>
                         <Button
                             className="text-black hover:opacity-60 duration-300 transition ease-in-out"
@@ -42,14 +87,19 @@ export default function Header() {
                 ))}
             </div>
 
-            <Logo showOn="2xl:" hideOn="" />
+            <Logo hideOn="" showOn="2xl:" />
 
             <section className="flex items-center justify-end">
-                <Button className="xl:p-0 pr-3 hidden md:flex">Log in</Button>
+                <Link href="/sign-in" className="xl:p-0 pr-3 hidden md:flex">
+                    Log in
+                </Link>
                 <Dot className="hidden xl:flex" />
-                <Button className="bg-black rounded-full text-white font-semibold text-center flex-nowrap whitespace-nowrap px-4 py-2 hover:opacity-60 duration-500 transition ease-in-out">
+                <Link
+                    href="/sign-up"
+                    className="bg-black rounded-full text-white font-semibold text-center flex-nowrap whitespace-nowrap px-4 py-2 hover:opacity-60 duration-500 transition ease-in-out"
+                >
                     Sign up
-                </Button>
+                </Link>
             </section>
         </div>
     );
