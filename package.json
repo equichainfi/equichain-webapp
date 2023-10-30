@@ -12,13 +12,16 @@
         "prepare": "husky install",
         "prettier": "prettier . --write",
         "prettier:check": "prettier . --check",
-        "check": "lint-staged && npm run prettier && npm run lint && npm run test"
+        "check": "lint-staged && npm run prettier && npm run lint && npm run test",
+        "db:generate": "drizzle-kit generate:pg",
+        "db:push": "drizzle-kit push:pg",
+        "studio": "drizzle-kit studio"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "lint-staged && npm prettier && npm run lint",
-            "pre-push": "npm test && npm run build && npm prettier",
-            "pre-rebase": "npm test && npm run build && npm prettier"
+            "pre-commit": "npm prettier && lint-staged && npm run lint",
+            "pre-push": "npm prettier && npm test && npm run build",
+            "pre-rebase": "npm prettier && npm test && npm run build"
         }
     },
     "lint-staged": {
@@ -34,13 +37,18 @@
         "@radix-ui/react-hover-card": "^1.0.7",
         "@radix-ui/react-scroll-area": "^1.0.5",
         "@radix-ui/react-separator": "^1.0.3",
+        "@clerk/nextjs": "^4.25.3",
         "@radix-ui/react-slot": "^1.0.2",
         "axios": "^1.5.1",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
         "drizzle-orm": "^0.28.6",
+        "date-fns": "^2.30.0",
         "husky-init": "^8.0.0",
+        "lucide-react": "^0.284.0",
+        "nanoid": "^5.0.1",
         "next": "latest",
+        "postgres": "^3.4.2",
         "react": "latest",
         "react-dom": "latest",
         "tailwind-merge": "^1.14.0",
@@ -48,15 +56,17 @@
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^17.7.0",
+        "@neondatabase/serverless": "^0.6.0",
         "@types/node": "latest",
         "@types/react": "latest",
         "@types/react-dom": "latest",
         "@typescript-eslint/eslint-plugin": "^6.7.3",
         "@typescript-eslint/parser": "^6.7.3",
         "autoprefixer": "latest",
-        "commitlint": "^17.7.2",
         "dotenv": "^16.3.1",
         "drizzle-kit": "^0.19.13",
+        "drizzle-orm": "^0.28.6",
+        "drizzle-zod": "^0.5.1",
         "eslint": "^8.50.0",
         "eslint-config-next": "latest",
         "eslint-config-prettier": "^9.0.0",
@@ -68,7 +78,7 @@
         "eslint-plugin-react": "^7.33.2",
         "husky": "^8.0.0",
         "lint-staged": "^14.0.1",
-        "lucide-react": "^0.287.0",
+        "pg": "^8.11.3",
         "postcss": "latest",
         "prettier": "^3.0.3",
         "tailwindcss": "latest",
