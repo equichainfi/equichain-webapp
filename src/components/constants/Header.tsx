@@ -15,7 +15,7 @@ export default function Header() {
         <div className="container-flex 2xl:grid 2xl:grid-cols-3 items-center justify-between bg-white w-screen">
             <option className="flex 2xl:hidden items-center">
                 <Logo showOn="" hideOn="2xl:" />
-                <div>
+                <div className="hidden sm:flex">
                     {navOptions.map((btn, index) => (
                         <Link href={btn.link} key={index}>
                             <Button
@@ -47,7 +47,7 @@ export default function Header() {
             <section className="flex items-center justify-end">
                 <Button className="xl:p-0 pr-3 hidden md:flex">Log in</Button>
                 <Dot className="hidden xl:flex" />
-                <Button className="bg-black rounded-full text-white font-semibold">
+                <Button className="bg-black rounded-full text-white font-semibold text-center flex-nowrap whitespace-nowrap px-4 py-2 hover:opacity-60 duration-500 transition ease-in-out">
                     Sign up
                 </Button>
             </section>

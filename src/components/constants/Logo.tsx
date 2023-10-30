@@ -10,7 +10,7 @@ export default function Logo({ hideOn, showOn }: LogoRWD) {
         >
             <Image
                 src={FullWhite}
-                className="cursor-pointer w-56 sm:w-64"
+                className="cursor-pointer w-48 sm:w-56 md:w-64"
                 alt="equichain logo"
                 width={1}
             />
