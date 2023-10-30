@@ -35,5 +35,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Visual Studio Code
+.vscode
+
 # generated
 src/lib/db/generated

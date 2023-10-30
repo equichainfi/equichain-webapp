@@ -1,27 +1,22 @@
 export {};
 
 declare global {
-    interface Post {
-        title: string;
-        slug: string;
-        desription: string;
-        images: string[];
+    type NavOptions = {
+        value: string;
+        link: string;
+        icon: JSX.Element;
+    }[];
 
-        status: "pending" | "active" | "sold" | "inactive";
-        isVerified: boolean;
-        price: number;
-        chain: string; //todo enum
-
-        area: string;
-
-        createdAt: Date;
-        updatedAt: Date;
-
-        purpose: string; //todo enum
-
-        views: number;
-        saves: number;
-        lastViewed: Date;
-        listedBy: string; //todo enum (user, admin)
+    type LogoRWD = {
+        hideOn?: string;
+        showOn?: string;
+    };
+    enum ShowHideOn {
+        "0" = "",
+        "sm" = "sm:",
+        "md" = "md:",
+        "lg" = "lg:",
+        "xl" = "xl:",
+        "xxl" = "2xl:",
     }
 }

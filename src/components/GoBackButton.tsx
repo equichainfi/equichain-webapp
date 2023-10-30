@@ -1,13 +1,10 @@
 "use client";
 
-import React, { FC } from "react";
-import { buttonVariants } from "./ui/Button";
 import { ChevronLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { buttonVariants } from "./ui/Button";
 
-interface GoBackButtonProps {}
-
-const GoBackButton: FC<GoBackButtonProps> = () => {
+export default function GoBackButton() {
     const pathName = usePathname();
 
     return (
@@ -16,6 +13,4 @@ const GoBackButton: FC<GoBackButtonProps> = () => {
             {pathName === "/" ? "Home" : "Go Back"}
         </a>
     );
-};
-
-export default GoBackButton;
+}
