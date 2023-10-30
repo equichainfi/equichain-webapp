@@ -7,12 +7,14 @@ import { Separator } from "..";
 export default function LeftSidebar() {
     return (
         <nav className="w-2/3 xs:w-1/2 h-full bg-white rounded-r-3xl flex flex-col p-3 shadow-2xl">
-            <Image
-                src={FullWhiteSmall}
-                alt="equichain logo"
-                className="w-full h-20"
-                width={1}
-            />
+            <Link href={"/"}>
+                <Image
+                    src={FullWhiteSmall}
+                    alt="equichain logo"
+                    className="w-full h-20"
+                    width={1}
+                />
+            </Link>
             <section className="flex flex-col items-start gap-y-2 pt-3">
                 <>
                     {navOptions.slice(0, 4).map((btn, index) => (
