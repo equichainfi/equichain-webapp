@@ -8,4 +8,5 @@ export default {
     dbCredentials: {
         connectionString: process.env.DATABASE_URL!,
     },
+    out: "src/lib/db/generated",
 } satisfies Config;

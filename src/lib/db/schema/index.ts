@@ -7,14 +7,14 @@ import { User } from "./user";
 import { Like } from "./like";
 import { Wallet } from "./wallet";
 
-import { postEnum, postCategoryEnum } from "./enums";
+import { PostEnum, PostCategoryEnum } from "./enums";
 
 export {
     User,
     Post,
     Session,
-    postEnum,
-    postCategoryEnum,
+    PostEnum,
+    PostCategoryEnum,
     Account,
     Comment,
     CommentLike,

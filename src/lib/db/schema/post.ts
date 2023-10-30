@@ -7,14 +7,14 @@ import {
     timestamp,
     varchar,
 } from "drizzle-orm/pg-core";
-import { postCategoryEnum, postEnum } from ".";
+// import { PostCategoryEnum, PostEnum } from ".";
 
 export const Post = pgTable("Post", {
     id: serial("id").primaryKey(),
     title: text("title").notNull(),
     slug: varchar("slug", { length: 256 }).notNull(),
     description: text("description").notNull(),
-    status: postEnum("status").notNull(),
+    status: text("status").notNull(), // change text with enum
     images: text("images").array().notNull(),
 
     isVerified: boolean("is_verified").notNull(),
@@ -30,5 +30,5 @@ export const Post = pgTable("Post", {
 
     // comments: Comment.array().notNull(),
     // likes: Like.array().notNull(),
-    category: postCategoryEnum("category").notNull(),
+    category: text("category").notNull(), // change text with enum
 });
