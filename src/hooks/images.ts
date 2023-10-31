@@ -1,4 +1,4 @@
-import { loginpage_images } from "../static/data";
+import { loginpage_images } from "@/lib/static/data";
 
 export const randomImage = (): string => {
     return loginpage_images[

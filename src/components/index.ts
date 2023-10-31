@@ -1,3 +1,4 @@
+// COMPONENTS
 import GoBackButton from "./GoBackButton";
 import Post from "./Post";
 import Providers from "./Providers";
@@ -8,7 +9,7 @@ import { Icons } from "./Icons";
 import UserAuthForm from "./UserAuthForm";
 import CloseModal from "./CloseModal";
 
-// Constants
+// CONSTANTS
 import Header from "./constants/Header";
 import Footer from "./constants/Footer";
 import Logo from "./constants/Logo";
@@ -33,6 +34,9 @@ import {
     AccordionTrigger,
 } from "./ui/Accordion";
 import { Separator } from "./ui/Separator";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Skeleton } from "./ui/skeleton";
+import { Badge, badgeVariants } from "./ui/badge";
 
 export {
     GoBackButton,
@@ -62,4 +66,10 @@ export {
     Icons,
     UserAuthForm,
     CloseModal,
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+    Skeleton,
+    Badge,
+    badgeVariants,
 };

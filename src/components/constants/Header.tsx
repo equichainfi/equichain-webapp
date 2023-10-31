@@ -17,7 +17,6 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button, LeftSidebar, Logo } from "..";
 import { SmallLogoPlain } from "../../../public";
-import { UserButton } from "@clerk/nextjs";
 
 export const navOptions: NavOptions = [
     { value: "Buy Properties", link: "/homes", icon: <Hotel /> },
@@ -94,7 +93,7 @@ export default function Header() {
             <Logo hideOn="" showOn="2xl:" />
 
             <section className="flex items-center justify-end">
-                {userLoggedIn && <UserButton afterSignOutUrl="/" />}
+                {/* {userLoggedIn && <UserButton afterSignOutUrl="/" />} */}
                 {!userLoggedIn && (
                     <>
                         <Link

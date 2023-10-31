@@ -1,4 +1,4 @@
-import { randomImage } from "@/lib/api/images";
+import { randomImage } from "@/hooks/images";
 import { Undo2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
