@@ -1,6 +1,2 @@
-# Ignore page.tsx in the sign-in and sign-up components
-**/src/app/**/(auth)/sign-in/**/page.tsx
-**/src/app/**/(auth)/sign-up/**/page.tsx
-
 public/temp
 public/images

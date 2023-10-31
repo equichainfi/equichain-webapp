@@ -1,6 +1,7 @@
 import GoBackButton from "./GoBackButton";
 import Post from "./Post";
 import Providers from "./Providers";
+import SignInPoster from "./SignInPoster";
 
 // Constants
 import Header from "./constants/Header";
@@ -50,4 +51,5 @@ export {
     AccordionTrigger,
     Separator,
     Providers,
+    SignInPoster,
 };
