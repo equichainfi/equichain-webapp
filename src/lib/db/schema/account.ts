@@ -1,4 +1,4 @@
-import { integer, pgTable, serial, text } from "drizzle-orm/pg-core";
+import { integer, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 
 export const Account = pgTable("Account", {
     id: serial("id").primaryKey(),
@@ -10,6 +10,10 @@ export const Account = pgTable("Account", {
     expiresAt: integer("expires_at"),
     tokenType: text("token_type"),
     scope: text("scope"),
-    id_token: text("id_token"),
+    idToken: text("id_token"),
     sessionState: text("session_state"),
+    joinedAt: timestamp("joined_at").notNull(),
+    lastSignInAt: timestamp("last_sign_in_at").notNull(),
+
+    followers: integer("followers").notNull().default(0),
 });

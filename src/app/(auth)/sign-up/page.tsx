@@ -1,15 +1,29 @@
-"use client";
+import SignUp from "@/components/SignUp";
+import { buttonVariants } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
+import { ChevronLeft } from "lucide-react";
+import Link from "next/link";
+import { FC } from "react";
 
-import { SignInPoster } from "@/components";
-import { SignUp } from "@clerk/nextjs";
-
-export default function Page() {
+const page: FC = () => {
     return (
-        <main className="signing-page">
-            <SignInPoster />
-            <section className="flex items-center justify-center xl:justify-start xl:pl-32 2xl:pl-60 h-screen w-screen lg:w-1/2 xl:w-2/3 2xl:w-3/4 md:bg-white">
+        <div className="absolute inset-0">
+            <div className="h-full max-w-2xl mx-auto flex flex-col items-center justify-center gap-20">
+                <Link
+                    href="/"
+                    className={cn(
+                        buttonVariants({ variant: "ghost" }),
+                        "self-start -mt-20",
+                    )}
+                >
+                    <ChevronLeft className="mr-2 h-4 w-4" />
+                    Home
+                </Link>
+
                 <SignUp />
-            </section>
-        </main>
+            </div>
+        </div>
     );
-}
+};
+
+export default page;

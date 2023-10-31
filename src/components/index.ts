@@ -2,6 +2,11 @@ import GoBackButton from "./GoBackButton";
 import Post from "./Post";
 import Providers from "./Providers";
 import SignInPoster from "./SignInPoster";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import { Icons } from "./Icons";
+import UserAuthForm from "./UserAuthForm";
+import CloseModal from "./CloseModal";
 
 // Constants
 import Header from "./constants/Header";
@@ -52,4 +57,9 @@ export {
     Separator,
     Providers,
     SignInPoster,
+    SignIn,
+    SignUp,
+    Icons,
+    UserAuthForm,
+    CloseModal,
 };

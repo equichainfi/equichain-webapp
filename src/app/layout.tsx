@@ -18,15 +18,19 @@ export default function RootLayout({
     authModal: React.ReactNode;
 }) {
     return (
-        <Providers>
-            <html lang="en">
-                <body className={inter.className}>
-                    {authModal}
+        <html lang="en">
+            <body className={inter.className}>
+                <Providers>
                     <Header />
+                    {/* AUTH FLOW */}
+                    {authModal}
+
                     {children}
                     <Footer />
-                </body>
-            </html>
-        </Providers>
+
+                    {/* <Toaster /> */}
+                </Providers>
+            </body>
+        </html>
     );
 }
