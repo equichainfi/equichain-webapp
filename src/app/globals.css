@@ -22,7 +22,7 @@
         @apply flex whitespace-nowrap text-base items-center gap-x-2 text-black hover:opacity-60 duration-300 transition ease-in-out;
     }
     .signing-page {
-        @apply w-screen h-screen fixed z-50 top-0 bg-white flex items-center justify-center;
+        @apply w-screen h-screen absolute z-50 top-0 bg-white flex items-center justify-center;
     }
 }
 

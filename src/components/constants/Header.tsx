@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import {
@@ -15,6 +17,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button, LeftSidebar, Logo } from "..";
 import { SmallLogoPlain } from "../../../public";
+import { UserButton } from "@clerk/nextjs";
 
 export const navOptions: NavOptions = [
     { value: "Buy Properties", link: "/homes", icon: <Hotel /> },
@@ -28,6 +31,7 @@ export const navOptions: NavOptions = [
 
 export default function Header() {
     const [showSidebar, setShowSidebar] = useState<boolean>(false);
+    const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
 
     return (
         <div className="px-2 py-5 flex sm:px-10 lg:px-16 xl:px-20 2xl:px-24 justify-between bg-white w-screen">
@@ -90,16 +94,24 @@ export default function Header() {
             <Logo hideOn="" showOn="2xl:" />
 
             <section className="flex items-center justify-end">
-                <Link href="/sign-in" className="xl:p-0 pr-3 hidden md:flex">
-                    Log in
-                </Link>
-                <Dot className="hidden xl:flex" />
-                <Link
-                    href="/sign-up"
-                    className="bg-black rounded-full text-white font-semibold text-center flex-nowrap whitespace-nowrap px-4 py-2 hover:opacity-60 duration-500 transition ease-in-out"
-                >
-                    Sign up
-                </Link>
+                {userLoggedIn && <UserButton afterSignOutUrl="/" />}
+                {!userLoggedIn && (
+                    <>
+                        <Link
+                            href="/sign-in"
+                            className="xl:p-0 pr-3 hidden md:flex"
+                        >
+                            Log in
+                        </Link>
+                        <Dot className="hidden xl:flex" />
+                        <Link
+                            href="/sign-up"
+                            className="bg-black rounded-full text-white font-semibold text-center flex-nowrap whitespace-nowrap px-4 py-2 hover:opacity-60 duration-500 transition ease-in-out"
+                        >
+                            Sign up
+                        </Link>
+                    </>
+                )}
             </section>
         </div>
     );
