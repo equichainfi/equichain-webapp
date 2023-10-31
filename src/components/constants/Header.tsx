@@ -34,7 +34,7 @@ export default function Header() {
     const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
 
     return (
-        <div className="px-2 py-5 flex sm:px-10 lg:px-16 xl:px-20 2xl:px-24 justify-between bg-white w-screen">
+        <div className="px-2 py-5 flex 2xl:grid 2xl:grid-cols-3 sm:px-10 lg:px-16 xl:px-20 2xl:px-24 justify-between bg-white w-screen">
             <Button
                 className="p-0 sm:hidden"
                 variant={"default"}
@@ -82,7 +82,7 @@ export default function Header() {
                 {navOptions.slice(0, 3).map((btn, index) => (
                     <Link href={btn.link} key={index}>
                         <Button
-                            className="text-black hover:opacity-60 duration-300 transition ease-in-out"
+                            className="text-black hover:opacity-60 duration-300 transition ease-in-out pl-0"
                             variant={"default"}
                         >
                             {btn.value}
