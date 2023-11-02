@@ -1,6 +1,6 @@
 import { integer, pgTable, serial, text, timestamp } from "drizzle-orm/pg-core";
 
-export const Account = pgTable("Account", {
+export const Account = pgTable("account", {
     id: serial("id").primaryKey(),
     type: text("type").notNull(), //todo add enum
     provider: text("provider").notNull(),

@@ -9,7 +9,7 @@ import {
 } from "drizzle-orm/pg-core";
 // import { PostCategoryEnum, PostEnum } from ".";
 
-export const Post = pgTable("Post", {
+export const Post = pgTable("post", {
     id: serial("id").primaryKey(),
     title: text("title").notNull(),
     slug: varchar("slug", { length: 256 }).notNull(),

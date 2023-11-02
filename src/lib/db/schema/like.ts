@@ -1,7 +1,7 @@
 import { pgTable, serial } from "drizzle-orm/pg-core";
 import { Post, User } from ".";
 
-export const Like = pgTable("Like", {
+export const Like = pgTable("like", {
     userId: serial("user_id")
         .notNull()
         .references(() => User.id),

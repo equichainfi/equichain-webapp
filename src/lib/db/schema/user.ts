@@ -1,7 +1,7 @@
 import { date, pgTable, serial, varchar } from "drizzle-orm/pg-core";
-import { Account } from ".";
+import { Account } from "./account";
 
-export const User = pgTable("User", {
+export const User = pgTable("user", {
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 32 }).notNull(),
     lastName: varchar("last_name", { length: 64 }).notNull(),

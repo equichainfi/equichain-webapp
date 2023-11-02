@@ -2,6 +2,7 @@
     "name": "equichain-webapp",
     "version": "0.1.0",
     "private": true,
+    "license": "Apache-2.0",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
@@ -13,9 +14,10 @@
         "prettier": "prettier . --write",
         "prettier:check": "prettier . --check",
         "check": "lint-staged && npm run prettier && npm run lint && npm run test",
-        "db:generate": "drizzle-kit generate:pg",
-        "db:push": "drizzle-kit push:pg",
-        "db:introspect": "drizzle-kit introspect:pg",
+        "db:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
+        "db:push": "drizzle-kit push:pg ",
+        "db:introspect": "drizzle-kit introspect:pg --config=drizzle.config.ts",
+        "db:check": "drizzle-kit introspect:pg --config=drizzle.config.ts",
         "studio": "drizzle-kit studio"
     },
     "husky": {
