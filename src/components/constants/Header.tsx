@@ -79,9 +79,9 @@ export default function Header() {
             {/*  */}
             <div className="hidden 2xl:flex items-center justify-start">
                 {navOptions.slice(0, 3).map((btn, index) => (
-                    <Link href={btn.link} key={index}>
+                    <Link href={btn.link} key={index} className="mx-1">
                         <Button
-                            className="text-black hover:opacity-60 duration-300 transition ease-in-out pl-0"
+                            className="text-black hover:opacity-60 duration-300 transition ease-in-out px-2"
                             variant={"default"}
                         >
                             {btn.value}
