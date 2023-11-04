@@ -91,11 +91,18 @@ export default function Page() {
                         </div>
                     </div>
                 </header>
-                <PostPricing />
-                <PostPriceHistory />
-                <PostListings />
-                <PostOffers />
-                <PostComments />
+                <div className="flex flex-col gap-y-3">
+                    <PostPricing />
+                    <PostPriceHistory />
+                    <PostListings
+                        price="6060,60 ETH"
+                        usd_price="$12 837 123,53"
+                        expiration="17 stycznia 2024 at 8:46 AM"
+                        author="Satoshi Nakamoto"
+                    />
+                    <PostOffers />
+                    <PostComments />
+                </div>
             </section>
         </main>
     );

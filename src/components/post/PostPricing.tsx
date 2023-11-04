@@ -25,7 +25,7 @@ const PostPricing = () => {
                         </Button>
                     </div>
 
-                    <Button className="bg-zinc-200 text-lg text-white font-semibold w-full gap-x-2 flex items-center justify-center">
+                    <Button className="bg-zinc-200 text-lg text-black font-semibold w-full gap-x-2 flex items-center justify-center">
                         Make offer <Tag size={19} />
                     </Button>
                 </div>
