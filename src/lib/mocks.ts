@@ -1,0 +1,48 @@
+import { loginpage_images } from "./static/data";
+
+export const PostMocks = [
+    {
+        title: "Super mansion",
+        author: "Satoshi Nakamoto",
+        likeAmount: 1230421,
+        commentAmount: 123,
+        images: [...loginpage_images],
+        price: 13.123,
+        datePosted: "2021-01-01",
+        area: "Miami",
+        postId: "AShnbdfv21D",
+    },
+    {
+        title: "Duplex",
+        author: "Satoshi Nakamoto",
+        likeAmount: 1230421,
+        commentAmount: 123,
+        images: [...loginpage_images],
+        price: 13.123,
+        datePosted: "an hour ago",
+        area: "Miami",
+        postId: "AShnbdfv21D",
+    },
+    {
+        title: "Post 3",
+        author: "Satoshi Nakamoto",
+        likeAmount: 1230421,
+        commentAmount: 123,
+        images: [...loginpage_images],
+        price: 13.123,
+        datePosted: "25 min ago",
+        area: "Miami",
+        postId: "AShnbdfv21D",
+    },
+    {
+        title: "Post 4",
+        author: "Satoshi Nakamoto",
+        likeAmount: 1230421,
+        commentAmount: 123,
+        images: [...loginpage_images],
+        price: 13.123,
+        datePosted: "2021-01-01",
+        area: "Miami",
+        postId: "AShnbdfv21D",
+    },
+];
