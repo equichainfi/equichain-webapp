@@ -61,6 +61,7 @@
         "next-auth": "^4.24.4",
         "postgres": "^3.4.2",
         "react": "latest",
+        "react-bootstrap": "^2.9.1",
         "react-dom": "latest",
         "react-responsive-carousel": "^3.2.23",
         "tailwind-merge": "^1.14.0",

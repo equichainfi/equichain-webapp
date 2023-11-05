@@ -12,103 +12,10 @@ import {
     TableHeader,
     TableRow,
 } from "..";
+import { PostOffers } from "@/types/post";
 
-interface IOffer {
-    price: string;
-    usdPrice: string;
-    floorDifference: string;
-    expiration: string;
-    from: string;
-}
-
-export default function PostOffers() {
+export default function PostOffers({ offers }: { offers: PostOffers[] }) {
     const [isHidden, setIsHidden] = useState<boolean>(false);
-    const offers: IOffer[] = [
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "6% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "5% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-        {
-            price: "28,3849 WETH",
-            usdPrice: "$52 281,01",
-            floorDifference: "1% below",
-            expiration: "12 hours ago",
-            from: "50B056",
-        },
-    ];
 
     return (
         <main className="rounded-xl border">
@@ -179,33 +86,40 @@ export default function PostOffers() {
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {offers.slice(0, 5).map((offer, index) => (
-                                        <TableRow
-                                            key={index}
-                                            className="w-full"
-                                        >
-                                            <TableCell className="font-medium flex-nowrap whitespace-nowrap">
-                                                {offer.price}
-                                            </TableCell>
-                                            <TableCell>
-                                                {offer.usdPrice}
-                                            </TableCell>
-                                            <TableCell>
-                                                {offer.floorDifference}
-                                            </TableCell>
-                                            <TableCell>
-                                                {offer.expiration}
-                                            </TableCell>
-                                            <TableCell>
-                                                <Link
-                                                    className="text-blue-400 hover:text-primary duration-300"
-                                                    href="/u/Satoshi Nakamoto"
+                                    {offers
+                                        .slice(0, 5)
+                                        .map(
+                                            (
+                                                offer: PostOffers,
+                                                index: number,
+                                            ) => (
+                                                <TableRow
+                                                    key={index}
+                                                    className="w-full"
                                                 >
-                                                    {offer.from}
-                                                </Link>
-                                            </TableCell>
-                                        </TableRow>
-                                    ))}
+                                                    <TableCell className="font-medium flex-nowrap whitespace-nowrap">
+                                                        {offer.price} ETH
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        ${offer.usdPrice}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        {offer.floorDifference}%
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        {offer.expiration}
+                                                    </TableCell>
+                                                    <TableCell>
+                                                        <Link
+                                                            className="text-blue-400 hover:text-primary duration-300"
+                                                            href="/u/Satoshi Nakamoto"
+                                                        >
+                                                            {offer.from}
+                                                        </Link>
+                                                    </TableCell>
+                                                </TableRow>
+                                            ),
+                                        )}
                                 </TableBody>
                             </Table>
                         )}

@@ -5,12 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { PostBlockchainDetails, PostHomeFeatures } from "..";
+import { PostDetails, PostFeatures } from "@/types/post";
 
-export default function PostDetailsSection() {
+export default function PostDetailsSection({
+    description,
+    author,
+    features,
+    details,
+}: {
+    description: string;
+    author: string;
+    features: PostFeatures;
+    details: PostDetails;
+}) {
     const [descriptionIsHidden, setDescriptionIsHidden] =
         useState<boolean>(true);
-    const description: string =
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam libero, facilis, tenetur nam ratione distinctio itaque laboriosam maiores sapiente, voluptate id ex consequatur deleniti. Odit amet ratione velit assumenda modi!";
+
     return (
         <main className="border rounded-xl">
             <header className="border-b rounded-t-xl h-10 gap-x-2 p-3 flex items-center justify-start">
@@ -24,7 +34,7 @@ export default function PostDetailsSection() {
                             className="text-blue-400 hover:text-primary duration-300"
                             href="/u/Satoshi Nakamoto"
                         >
-                            Satoshi Nakamoto
+                            {author}
                         </Link>
                     </div>
                     <Image
@@ -70,8 +80,8 @@ export default function PostDetailsSection() {
                     )}
                 </div>
             </section>
-            <PostHomeFeatures />
-            <PostBlockchainDetails />
+            <PostHomeFeatures postFeatures={features} />
+            <PostBlockchainDetails postDetails={details} />
         </main>
     );
 }

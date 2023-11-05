@@ -5,8 +5,13 @@ import { ChevronDown, ChevronUp, ScanBarcode } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "..";
+import { PostDetails } from "@/types/post";
 
-export default function PostBlockchainDetails() {
+export default function PostBlockchainDetails({
+    postDetails,
+}: {
+    postDetails: PostDetails;
+}) {
     const [isHidden, setIsHidden] = useState<boolean>(false);
     const features = [
         {
@@ -18,9 +23,9 @@ export default function PostBlockchainDetails() {
                     rel="noreferrer"
                     className="text-blue-400 hover:text-primary duration-300"
                 >
-                    {"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d".slice(0, 6) +
+                    {postDetails.contractAddress.slice(0, 6) +
                         "..." +
-                        "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d".slice(-4)}
+                        postDetails.contractAddress.slice(-4)}
                 </Link>
             ),
         }, // link to etherscan
@@ -33,15 +38,15 @@ export default function PostBlockchainDetails() {
                     rel="noreferrer"
                     className="text-blue-400 hover:text-primary duration-300"
                 >
-                    00001
+                    {postDetails.tokenId}
                 </Link>
             ),
         }, // link to ipfs
-        { feature: "Token Standard", value: "ERC-721" },
-        { feature: "Chain", value: "Ethereum" },
+        { feature: "Token Standard", value: postDetails.tokenStandard },
+        { feature: "Chain", value: postDetails.chain },
         {
             feature: "Metadata",
-            value: (
+            value: postDetails.isMetadataFrozen ? (
                 <>
                     <TooltipProvider>
                         <Tooltip>
@@ -70,9 +75,12 @@ export default function PostBlockchainDetails() {
                         </Tooltip>
                     </TooltipProvider>
                 </>
-            ),
+            ) : null,
         }, // link to ipfs
-        { feature: "Creator Earnings", value: "3.5%" },
+        {
+            feature: "Creator Earnings",
+            value: `${postDetails.creatorEarnings}%`,
+        },
     ];
     return (
         <main className="border-t">

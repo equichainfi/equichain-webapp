@@ -1,19 +1,26 @@
 "use client";
 
+import { PostFeatures } from "@/types/post";
 import clsx from "clsx";
 import { ChevronDown, ChevronUp, ListTodo } from "lucide-react";
 import { useState } from "react";
 
-export default function PostHomeFeatures() {
+export default function PostHomeFeatures({
+    postFeatures,
+}: {
+    postFeatures: PostFeatures;
+}) {
     const [isHidden, setIsHidden] = useState<boolean>(false);
     const features = [
-        { feature: "Type", value: "Single Family" },
-        { feature: "City", value: "New York" },
-        { feature: "Home size", value: "2678 sq. ft" },
-        { feature: "Lot size", value: "7840 sq. ft." },
-        { feature: "Price per feet", value: "$182" },
-        { feature: "Beds", value: "3" },
-        { feature: "Baths", value: "2" },
+        { feature: "Type", value: postFeatures.type },
+        { feature: "City", value: postFeatures.city },
+        { feature: "Home size", value: postFeatures.homeSize },
+        { feature: "Lot size", value: postFeatures.lotSize },
+        { feature: "Price per feet", value: postFeatures.pricePerFeet },
+        { feature: "Beds", value: postFeatures.beds },
+        { feature: "Baths", value: postFeatures.baths },
+        { feature: "Parking Slots", value: postFeatures.parking },
+        { feature: "Year Built", value: postFeatures.yearBuilt },
     ];
     return (
         <main className="border-t">

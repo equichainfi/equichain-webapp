@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+import { PostMocks } from "@/lib/mocks";
 import clsx from "clsx";
 import { ChevronDown, ChevronUp, Grid3X3 } from "lucide-react";
 import { useState } from "react";
 import { Post, ScrollArea, ScrollBar } from "..";
-import { PostMocks } from "@/lib/mocks";
+import { PostProps } from "@/types/post";
 
 const MoreSimilarListings = () => {
     const [isHidden, setIsHidden] = useState<boolean>(false);
@@ -51,57 +52,14 @@ const MoreSimilarListings = () => {
                         </div>
                         {isHidden ? <ChevronUp /> : <ChevronDown />}
                     </button>
-                    <section className="">
+                    <section>
                         <ScrollArea>
                             <div className="flex w-full gap-x-3 items-center justify-start p-3">
-                                {PostMocks.map((post: any, index: number) => (
-                                    <Post
-                                        key={index}
-                                        post={post}
-                                        commentAmount={post.commentAmount}
-                                        author={post.author}
-                                        likeAmount={post.likeAmount}
-                                        currentLike={post.currentLike}
-                                        title={post.title}
-                                        images={post.images}
-                                        price={post.price}
-                                        datePosted={post.datePosted}
-                                        area={post.area}
-                                        postId={post.postId}
-                                    />
-                                ))}
-                                {PostMocks.map((post: any, index: number) => (
-                                    <Post
-                                        key={index}
-                                        post={post}
-                                        commentAmount={post.commentAmount}
-                                        author={post.author}
-                                        likeAmount={post.likeAmount}
-                                        currentLike={post.currentLike}
-                                        title={post.title}
-                                        images={post.images}
-                                        price={post.price}
-                                        datePosted={post.datePosted}
-                                        area={post.area}
-                                        postId={post.postId}
-                                    />
-                                ))}
-                                {PostMocks.map((post: any, index: number) => (
-                                    <Post
-                                        key={index}
-                                        post={post}
-                                        commentAmount={post.commentAmount}
-                                        author={post.author}
-                                        likeAmount={post.likeAmount}
-                                        currentLike={post.currentLike}
-                                        title={post.title}
-                                        images={post.images}
-                                        price={post.price}
-                                        datePosted={post.datePosted}
-                                        area={post.area}
-                                        postId={post.postId}
-                                    />
-                                ))}
+                                {PostMocks.map(
+                                    (post: PostProps, index: number) => (
+                                        <Post key={index} postData={post} />
+                                    ),
+                                )}
                             </div>
                             <ScrollBar orientation="horizontal" />
                         </ScrollArea>

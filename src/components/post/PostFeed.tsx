@@ -6,9 +6,10 @@
 import { useRef } from "react";
 import { Post } from "..";
 import { useIntersection } from "@mantine/hooks";
+import { PostProps } from "@/types/post";
 
 interface PostFeedProps {
-    initialPosts: any[];
+    initialPosts: PostProps[];
 }
 
 export default function PostFeed({ initialPosts }: PostFeedProps) {
@@ -24,25 +25,14 @@ export default function PostFeed({ initialPosts }: PostFeedProps) {
     //     }
     // }, [entry, fetchNextPage]);
 
-    const posts = initialPosts;
     return (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-3 gap-y-4 bg-gray-100 p-10">
-            {posts.map((post: any, index: number) => (
-                <Post
-                    key={index}
-                    post={post}
-                    commentAmount={post.commentAmount}
-                    author={post.author}
-                    likeAmount={post.likeAmount}
-                    currentLike={post.currentLike}
-                    title={post.title}
-                    images={post.images}
-                    price={post.price}
-                    datePosted={post.datePosted}
-                    area={post.area}
-                    postId={post.postId}
-                />
-            ))}
-        </ul>
+        <main className="px-2 py-5 sm:px-10 lg:px-16 xl:px-20 2xl:px-24">
+            <h1 className="text-4xl font-semibold mb-5">Properties to buy</h1>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-3 gap-y-4">
+                {initialPosts.map((post: PostProps, index: number) => (
+                    <Post key={index} postData={post} />
+                ))}
+            </ul>
+        </main>
     );
 }

@@ -13,8 +13,13 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "..";
+import { PostComments } from "@/types/post";
 
-export default function PostComments() {
+export default function PostComments({
+    comments,
+}: {
+    comments: PostComments[];
+}) {
     const [isHidden, setIsHidden] = useState<boolean>(false);
     return (
         <main className="rounded-xl border">
@@ -67,39 +72,48 @@ export default function PostComments() {
                             },
                         )}
                     >
-                        {/* map for comments */}
-                        <div className="felx flex-col">
-                            <Link
-                                className="text-blue-400 hover:text-primary duration-300"
-                                href="/u/50B056"
-                            >
-                                @50B056
-                            </Link>
-                            <p className="pl-3">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quae, voluptatibus.
-                            </p>
-                            <div className="flex items-center">
-                                <div className="flex items-center gap-x-2 pr-2">
-                                    <Button className="text-black p-0">
-                                        <ThumbsUp size={19} />
-                                    </Button>
-                                    <p>19</p>
-                                    <Button className="text-black p-0">
-                                        <ThumbsDown size={19} />
-                                    </Button>
+                        {comments.map(
+                            (comment: PostComments, index: number) => (
+                                <div
+                                    key={index}
+                                    className="flex flex-col w-full"
+                                >
+                                    <header className="w-full flex items-center justify-between">
+                                        <Link
+                                            className="text-blue-400 hover:text-primary duration-300"
+                                            href={`/u/${comment.author}`}
+                                        >
+                                            @{comment.author}
+                                        </Link>
+                                        <p className="text-zinc-400">
+                                            {comment.date}
+                                        </p>
+                                    </header>
+
+                                    <p className="pl-3">{comment.content}</p>
+                                    <div className="flex items-center">
+                                        <div className="flex items-center gap-x-2 pr-2">
+                                            <Button className="text-black p-0">
+                                                <ThumbsUp size={19} />
+                                            </Button>
+                                            <p>{comment.likes}</p>
+                                            <Button className="text-black p-0">
+                                                <ThumbsDown size={19} />
+                                            </Button>
+                                        </div>
+                                        <Button className="text-black gap-x-1 flex items-center">
+                                            <MessageSquare size={19} /> Reply
+                                        </Button>
+                                        <Button className="text-black gap-x-1 flex items-center">
+                                            <Share size={19} /> Share
+                                        </Button>
+                                        <Button className="text-black">
+                                            <MoreHorizontal size={19} />
+                                        </Button>
+                                    </div>
                                 </div>
-                                <Button className="text-black gap-x-1 flex items-center">
-                                    <MessageSquare size={19} /> Reply
-                                </Button>
-                                <Button className="text-black gap-x-1 flex items-center">
-                                    <Share size={19} /> Share
-                                </Button>
-                                <Button className="text-black">
-                                    <MoreHorizontal size={19} />
-                                </Button>
-                            </div>
-                        </div>
+                            ),
+                        )}
                     </section>
                 </>
             )}

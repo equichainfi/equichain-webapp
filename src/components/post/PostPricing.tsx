@@ -2,18 +2,26 @@ import { Clock, HelpingHand, ShoppingCart, Tag } from "lucide-react";
 import React from "react";
 import { Button } from "..";
 
-const PostPricing = () => {
+const PostPricing = ({
+    datePosted,
+    price,
+    usdPrice,
+}: {
+    datePosted: string;
+    price: number;
+    usdPrice: number;
+}) => {
     return (
         <main className="rounded-xl border">
             <header className="flex items-center justify-start gap-x-2 h-12 border-b p-3">
                 <Clock size={19} />
-                <p>Sale ends 17 stycznia 2024 at 8:46 AM </p>
+                <p>{datePosted}</p>
             </header>
             <section className="p-3 flex flex-col items-start justify-start">
                 <p>Current price</p>
                 <div className="flex items-end justify-start gap-x-2">
-                    <h1 className="text-3xl font-semibold">6060,60 ETH</h1>
-                    <p className="text-sm text-zinc-400 pb-1">$12 837 123,53</p>
+                    <h1 className="text-3xl font-semibold">{price} ETH</h1>
+                    <p className="text-sm text-zinc-400 pb-1">{usdPrice}</p>
                 </div>
                 <div className="flex items-center justify-between mt-3 gap-x-3 w-full">
                     <div className="w-full flex items-center">

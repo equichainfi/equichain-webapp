@@ -19,35 +19,43 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { PostMocks } from "@/lib/mocks";
+import { PostProps } from "@/types/post";
 
 export default function Page() {
+    const data: PostProps = PostMocks[0];
     return (
         <main className="flex flex-col container-flex gap-y-3">
             <div className="flex items-start justify-between gap-x-3">
                 <section className="w-[40%] h-full flex flex-col gap-y-3">
                     <main className=" border rounded-xl">
                         <header className="border-b rounded-t-xl h-10 bg-zinc-200 p-3 flex items-center justify-between">
-                            <div className="flex items-center justify-start gap-2">
-                                <Image
-                                    src="https://cryptologos.cc/logos/ethereum-eth-logo.png"
-                                    alt="ETH"
-                                    width={30}
-                                    height={20}
-                                    className="w-5 h-5 rounded-full object-cover object-center duration-700 transition ease-in-out"
-                                />
-                                <Snowflake size={19} />
-                            </div>
+                            {data.details.isMetadataFrozen && (
+                                <div className="flex items-center justify-start gap-2">
+                                    <Image
+                                        src="https://cryptologos.cc/logos/ethereum-eth-logo.png"
+                                        alt="ETH"
+                                        width={30}
+                                        height={20}
+                                        className="w-5 h-5 rounded-full object-cover object-center duration-700 transition ease-in-out"
+                                    />
+                                    <Snowflake size={19} />
+                                </div>
+                            )}
+
                             <div className="flex items-center justify-end gap-2">
                                 <Share size={19} />
                                 <div className="flex items-center justify-between gap-x-1">
-                                    <p className="text-sm">24</p>
+                                    <p className="text-sm">
+                                        {data.influence.likes_amount}
+                                    </p>
                                     <Heart size={19} />
                                 </div>
                             </div>
                         </header>
                         <div className="flex items-center justify-center p-10">
                             <Image
-                                src="https://i.seadn.io/gae/pWb4my976z4DWl1q5wc2GzIE7rMw-8uI9mFUNgv0X8JLUEeKx8hVb3kXU9RSps09hCNgOLAvIoR3Ram5jfYRutXfcRYn775xIunByw?auto=format&dpr=1&w=1000"
+                                src={data.images[0]}
                                 alt="Post Image"
                                 width={500}
                                 height={500}
@@ -55,14 +63,19 @@ export default function Page() {
                             />
                         </div>
                     </main>
-                    <PostDetailsSection />
+                    <PostDetailsSection
+                        description={data.description}
+                        author={data.author}
+                        features={data.features}
+                        details={data.details}
+                    />
                 </section>
 
                 <section className="w-[60%]">
                     <header className="flex flex-col">
                         <section className="p-3 h-10 flex items-center justify-between">
                             <div className="flex items-center justify-start gap-2">
-                                <Link href={"/"}>Satoshi</Link>
+                                <Link href={"/"}>{data.author}</Link>
                                 <Image
                                     src="https://thespokesman.net/wp-content/uploads/2023/05/Twitter_Verified_Badge.svg.png"
                                     alt="Verified"
@@ -76,43 +89,47 @@ export default function Page() {
                                 <MoreHorizontal size={19} />
                             </div>
                         </section>
-                        <h1 className="px-3 text-3xl font-semibold">#00001</h1>
+                        <h1 className="px-3 text-3xl font-semibold">
+                            #{data.details.tokenId}
+                        </h1>
                         <div className="px-3">
                             Owned by{" "}
                             <Link
                                 className="text-blue-400 hover:text-primary duration-300"
                                 href="/u/Satoshi Nakamoto"
                             >
-                                Satoshi Nakamoto
+                                {data.author}
                             </Link>
                         </div>
                         <div className="px-3 py-5 flex items-center justify-start gap-x-5">
                             <div className="flex items-center justify-start gap-x-2">
-                                <Eye size={19} /> 18.1K views
+                                <Eye size={19} /> {data.influence.views_amount}{" "}
+                                views
                             </div>
                             <div className="flex items-center justify-start gap-x-2 hover:text-zinc-600 cursor-pointer">
-                                <Heart size={19} /> 1.2K likes
+                                <Heart size={19} />{" "}
+                                {data.influence.likes_amount} likes
                             </div>
                             <div className="flex items-center justify-start gap-x-2 hover:text-zinc-600 cursor-pointer">
-                                <MessageCircle size={19} /> 60 comments
+                                <MessageCircle size={19} />{" "}
+                                {data.influence.comments_amount} comments
                             </div>
                         </div>
                     </header>
                     <div className="flex flex-col gap-y-3">
-                        <PostPricing />
-                        <PostPriceHistory />
-                        <PostListings
-                            price="6060,60 ETH"
-                            usd_price="$12 837 123,53"
-                            expiration="17 stycznia 2024 at 8:46 AM"
-                            author="Satoshi Nakamoto"
+                        <PostPricing
+                            datePosted={data.datePosted}
+                            price={data.listings[0].price}
+                            usdPrice={data.listings[0].usdPrice}
                         />
-                        <PostOffers />
-                        <PostComments />
+                        <PostPriceHistory />
+                        <PostListings listings={data.listings} />
+                        <PostOffers offers={data.offers} />
+                        <PostComments comments={data.comments} />
                     </div>
                 </section>
             </div>
-            <PostItemActivity />
+            <PostItemActivity itemActivity={data.nftActivity} />
             <MoreSimilarListings />
         </main>
     );

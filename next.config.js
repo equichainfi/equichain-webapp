@@ -6,6 +6,7 @@ const nextConfig = {
             "cryptologos.cc",
             "i.seadn.io",
             "thespokesman.net",
+            "images.crowdspring.com",
         ],
     },
 };

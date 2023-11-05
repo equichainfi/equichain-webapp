@@ -1,47 +1,19 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-unused-vars */
 "use client";
 
+import { PostProps } from "@/types/post";
 import Image from "next/image";
 import Link from "next/link";
 
-interface PostProps {
-    post: string;
-    commentAmount: number;
-    author: string;
-    likeAmount: number;
-    currentLike: boolean;
-    title: string;
-    images: string[];
-    price: number;
-    datePosted: string;
-    area: string;
-    postId: string;
-}
-
-export default function Post({
-    post,
-    commentAmount,
-    author,
-    likeAmount,
-    currentLike,
-    title,
-    images,
-    price,
-    datePosted,
-    area,
-    postId,
-}: PostProps) {
-    console.log("Images" + images);
+export default function Post({ postData }: { postData: PostProps }) {
     return (
         <Link
-            href={`/homes/${area}/${postId}`}
+            href={`/homes/${postData.area}/${postData.postId}`}
             className="bg-white rounded-xl shadow-md flex flex-col min-w-fit"
         >
             <section>
                 <Image
-                    src={images[0]}
-                    alt="Post Image"
+                    src={postData.images[0]}
+                    alt={postData.title}
                     width={500}
                     height={500}
                     className="w-full h-72 rounded-t-xl object-cover object-center duration-700 transition ease-in-out"
@@ -49,7 +21,9 @@ export default function Post({
             </section>
             <section className="px-5 py-3 flex flex-col">
                 <div className="flex items-center justify-start">
-                    <p className="text-lg font-semibold">{price}</p>
+                    <p className="text-lg font-semibold">
+                        {postData.listings[0].price}
+                    </p>
                     <Image
                         src="https://cryptologos.cc/logos/ethereum-eth-logo.png"
                         alt="ETH"
@@ -58,7 +32,7 @@ export default function Post({
                         className="w-6 h-6 rounded-full object-cover object-center duration-700 transition ease-in-out"
                     />
                     <span className="text-gray-400 text-sm pl-2 flex">
-                        {datePosted}
+                        {postData.datePosted}
                     </span>
                 </div>
             </section>
