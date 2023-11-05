@@ -36,7 +36,7 @@ export default function Post({
     return (
         <Link
             href={`/homes/${area}/${postId}`}
-            className="bg-white rounded-xl shadow-md flex flex-col"
+            className="bg-white rounded-xl shadow-md flex flex-col min-w-fit"
         >
             <section>
                 <Image

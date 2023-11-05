@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { ChevronDown, ChevronUp, List } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 import {
     Table,
@@ -11,10 +12,104 @@ import {
     TableHeader,
     TableRow,
 } from "..";
-import Link from "next/link";
+
+interface IOffer {
+    price: string;
+    usdPrice: string;
+    floorDifference: string;
+    expiration: string;
+    from: string;
+}
 
 export default function PostOffers() {
     const [isHidden, setIsHidden] = useState<boolean>(false);
+    const offers: IOffer[] = [
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "6% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "5% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+        {
+            price: "28,3849 WETH",
+            usdPrice: "$52 281,01",
+            floorDifference: "1% below",
+            expiration: "12 hours ago",
+            from: "50B056",
+        },
+    ];
+
     return (
         <main className="rounded-xl border">
             {isHidden && (
@@ -66,37 +161,54 @@ export default function PostOffers() {
                             },
                         )}
                     >
-                        <Table>
-                            <TableHeader>
-                                <TableRow>
-                                    <TableHead className="w-[100px]">
-                                        Price
-                                    </TableHead>
-                                    <TableHead>USD Price</TableHead>
-                                    <TableHead>Floor Difference</TableHead>
-                                    <TableHead>Expiration</TableHead>
-                                    <TableHead>From</TableHead>
-                                </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                                <TableRow>
-                                    <TableCell className="font-medium flex-nowrap whitespace-nowrap">
-                                        28,3849 WETH
-                                    </TableCell>
-                                    <TableCell>$52 281,01</TableCell>
-                                    <TableCell>5% below</TableCell>
-                                    <TableCell>12 hours ago</TableCell>
-                                    <TableCell>
-                                        <Link
-                                            className="text-blue-400 hover:text-primary duration-300"
-                                            href="/u/Satoshi Nakamoto"
+                        {offers.length === 0 ? (
+                            <h1 className="w-full text-center p-3">
+                                No offers at the moment
+                            </h1>
+                        ) : (
+                            <Table>
+                                <TableHeader>
+                                    <TableRow>
+                                        <TableHead className="w-[100px]">
+                                            Price
+                                        </TableHead>
+                                        <TableHead>USD Price</TableHead>
+                                        <TableHead>Floor Difference</TableHead>
+                                        <TableHead>Expiration</TableHead>
+                                        <TableHead>From</TableHead>
+                                    </TableRow>
+                                </TableHeader>
+                                <TableBody>
+                                    {offers.slice(0, 5).map((offer, index) => (
+                                        <TableRow
+                                            key={index}
+                                            className="w-full"
                                         >
-                                            50B056
-                                        </Link>
-                                    </TableCell>
-                                </TableRow>
-                            </TableBody>
-                        </Table>
+                                            <TableCell className="font-medium flex-nowrap whitespace-nowrap">
+                                                {offer.price}
+                                            </TableCell>
+                                            <TableCell>
+                                                {offer.usdPrice}
+                                            </TableCell>
+                                            <TableCell>
+                                                {offer.floorDifference}
+                                            </TableCell>
+                                            <TableCell>
+                                                {offer.expiration}
+                                            </TableCell>
+                                            <TableCell>
+                                                <Link
+                                                    className="text-blue-400 hover:text-primary duration-300"
+                                                    href="/u/Satoshi Nakamoto"
+                                                >
+                                                    {offer.from}
+                                                </Link>
+                                            </TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
+                        )}
                     </section>
                 </>
             )}
