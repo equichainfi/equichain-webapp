@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { PostMocks } from "@/lib/mocks";
+import { PostMocks } from "@/lib/mocks/mocks";
 import { PostProps } from "@/types/post";
 
 export default function Page() {
@@ -130,7 +130,7 @@ export default function Page() {
                 </section>
             </div>
             <PostItemActivity itemActivity={data.nftActivity} />
-            <MoreSimilarListings />
+            <MoreSimilarListings city={data.area} />
         </main>
     );
 }

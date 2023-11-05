@@ -1,14 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { PostMocks } from "@/lib/mocks";
+import { PostMocks } from "@/lib/mocks/mocks";
 import clsx from "clsx";
 import { ChevronDown, ChevronUp, Grid3X3 } from "lucide-react";
 import { useState } from "react";
 import { Post, ScrollArea, ScrollBar } from "..";
 import { PostProps } from "@/types/post";
 
-const MoreSimilarListings = () => {
+const MoreSimilarListings = ({ city }: { city: string }) => {
     const [isHidden, setIsHidden] = useState<boolean>(false);
 
     return (
@@ -55,11 +54,11 @@ const MoreSimilarListings = () => {
                     <section>
                         <ScrollArea>
                             <div className="flex w-full gap-x-3 items-center justify-start p-3">
-                                {PostMocks.map(
-                                    (post: PostProps, index: number) => (
-                                        <Post key={index} postData={post} />
-                                    ),
-                                )}
+                                {PostMocks.filter(
+                                    (post: PostProps) => post.area === city,
+                                ).map((post: PostProps, index: number) => (
+                                    <Post key={index} postData={post} />
+                                ))}
                             </div>
                             <ScrollBar orientation="horizontal" />
                         </ScrollArea>

@@ -1,5 +1,5 @@
 import { PostFeed } from "..";
-import { PostMocks } from "@/lib/mocks";
+import { PostMocks } from "@/lib/mocks/mocks";
 
 export default function GeneralFeed() {
     // todo: implement db.posts.findMany() and pass the result to PostFeed
