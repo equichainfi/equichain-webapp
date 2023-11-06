@@ -16,7 +16,7 @@ export default function PostHomeFeatures({
         { feature: "City", value: postFeatures.city },
         { feature: "Home size", value: postFeatures.homeSize },
         { feature: "Lot size", value: postFeatures.lotSize },
-        { feature: "Price per feet", value: postFeatures.pricePerFeet },
+        { feature: "Price per feet", value: "$" + postFeatures.pricePerFeet },
         { feature: "Beds", value: postFeatures.beds },
         { feature: "Baths", value: postFeatures.baths },
         { feature: "Parking Slots", value: postFeatures.parking },

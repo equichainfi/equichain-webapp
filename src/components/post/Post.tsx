@@ -21,9 +21,7 @@ export default function Post({ postData }: { postData: PostProps }) {
             </section>
             <section className="px-5 py-3 flex flex-col">
                 <div className="flex items-center justify-start">
-                    <p className="text-lg font-semibold">
-                        {postData.listings[0].price}
-                    </p>
+                    <p className="text-lg font-semibold">{postData.price}</p>
                     <Image
                         src="https://cryptologos.cc/logos/ethereum-eth-logo.png"
                         alt="ETH"

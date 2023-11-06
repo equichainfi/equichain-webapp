@@ -130,7 +130,7 @@ export default function Page() {
                 </section>
             </div>
             <PostItemActivity itemActivity={data.nftActivity} />
-            <MoreSimilarListings city={data.area} />
+            <MoreSimilarListings city={data.area} postId={data.postId} />
         </main>
     );
 }
