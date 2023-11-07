@@ -92,7 +92,7 @@ export default function PostListings({
                                             {listing.price}
                                         </TableCell>
                                         <TableCell>
-                                            {listing.usdPrice}
+                                            ${listing.usdPrice}
                                         </TableCell>
                                         <TableCell>
                                             {listing.expiration}

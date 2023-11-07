@@ -49,6 +49,8 @@ export type PostOffers = {
 };
 
 export type PostComments = {
+    parentCommentId: string;
+    commentId: string;
     author: string;
     content: string;
     likes: number;

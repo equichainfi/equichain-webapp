@@ -21,6 +21,7 @@ import PostPriceHistory from "./post/PostPriceHistory";
 import PostPricing from "./post/PostPricing";
 import PostItemActivity from "./post/PostItemActivity";
 import MoreSimilarListings from "./post/MoreSimilarListings";
+import Comment from "./Comment";
 
 // CONSTANTS
 import Footer from "./constants/Footer";
@@ -119,6 +120,7 @@ import {
 
 export {
     Card,
+    Comment,
     ScrollBar,
     CardHeader,
     CardFooter,

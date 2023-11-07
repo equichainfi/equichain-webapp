@@ -19,8 +19,8 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { PostMocks } from "@/lib/mocks/mocks";
 import { PostProps } from "@/types/post";
+import { PostMocks } from "@/lib/mocks/mocks";
 
 export default function Page() {
     const data: PostProps = PostMocks[0];
