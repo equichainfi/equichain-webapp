@@ -117,8 +117,11 @@ import {
     CardDescription,
     CardContent,
 } from "./ui/Card";
+import { Toggle, toggleVariants } from "./ui/Toggle";
 
 export {
+    Toggle,
+    toggleVariants,
     Card,
     Comment,
     ScrollBar,

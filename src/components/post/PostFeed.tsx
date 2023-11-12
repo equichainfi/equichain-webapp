@@ -1,18 +1,14 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
-
-import { useRef } from "react";
-import { Post } from "..";
-import { useIntersection } from "@mantine/hooks";
 import { PostProps } from "@/types/post";
+import { Post } from "..";
+import clsx from "clsx";
 
-interface PostFeedProps {
+export default function PostFeed({
+    initialPosts,
+    filtersAreVisible,
+}: {
     initialPosts: PostProps[];
-}
-
-export default function PostFeed({ initialPosts }: PostFeedProps) {
+    filtersAreVisible: boolean;
+}) {
     // const lastPostRef = useRef<HTMLElement>(null);
     // const { ref, entry } = useIntersection({
     //     root: lastPostRef.current,
@@ -24,15 +20,19 @@ export default function PostFeed({ initialPosts }: PostFeedProps) {
     //         fetchNextPage();
     //     }
     // }, [entry, fetchNextPage]);
-
     return (
-        <main className="px-2 py-5 sm:px-10 lg:px-16 xl:px-20 2xl:px-24">
-            <h1 className="text-4xl font-semibold mb-5">Properties to buy</h1>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-3 gap-y-4">
-                {initialPosts.map((post: PostProps, index: number) => (
-                    <Post key={index} postData={post} />
-                ))}
-            </ul>
-        </main>
+        <ul
+            className={clsx(
+                "grid gap-x-3 gap-y-4 w-full",
+                filtersAreVisible &&
+                    "grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4",
+                !filtersAreVisible &&
+                    "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5",
+            )}
+        >
+            {initialPosts.map((post: PostProps, index: number) => (
+                <Post key={index} postData={post} />
+            ))}
+        </ul>
     );
 }

@@ -72,7 +72,7 @@ export default function PostHomeFeatures({
                     >
                         {features.map((feature, index) => (
                             <div key={index} className="flex flex-col">
-                                <p className="text-sm text-zinc-500">
+                                <p className="text-sm text-secondary">
                                     {feature.feature}
                                 </p>
                                 <p>{feature.value}</p>

@@ -20,7 +20,7 @@ export default function Comment({ comment }: { comment: PostComments }) {
                 >
                     @{comment.author}
                 </Link>
-                <p className="text-zinc-400">{comment.date}</p>
+                <p className="text-secondary">{comment.date}</p>
             </header>
 
             <p className="pl-2 text-left">{comment.content}</p>

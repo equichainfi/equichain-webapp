@@ -21,7 +21,7 @@ const PostPricing = ({
                 <p>Current price</p>
                 <div className="flex items-end justify-start gap-x-2">
                     <h1 className="text-3xl font-semibold">{price} ETH</h1>
-                    <p className="text-sm text-zinc-400 pb-1">${usdPrice}</p>
+                    <p className="text-sm text-secondary pb-1">${usdPrice}</p>
                 </div>
                 <div className="flex items-center justify-between mt-3 gap-x-3 w-full">
                     <div className="w-full flex items-center">
@@ -40,7 +40,7 @@ const PostPricing = ({
                 <p className="flex justify-start items-center pt-3 text-[17px] font-semibold">
                     <HelpingHand size={25} />
                     <span className="px-2">Supports creator</span>{" "}
-                    <span className="text-zinc-400">
+                    <span className="text-secondary">
                         This listing is paying the collection creator their
                         suggested creator earnings.
                     </span>

@@ -18,6 +18,7 @@ export type PostProps = {
 };
 
 export type PostFeatures = {
+    typeValue: string;
     type: string;
     city: string;
     homeSize: string;

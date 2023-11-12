@@ -135,7 +135,7 @@ export default function PostBlockchainDetails({
                                 key={index}
                                 className="flex items-center justify-between"
                             >
-                                <p className="text-sm text-zinc-500">
+                                <p className="text-sm text-secondary">
                                     {feature.feature}
                                 </p>
                                 {feature.value}
