@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import { PostFeed } from "..";
-import { PostMocks } from "@/lib/mocks/mocks";
+import { PostMocks } from "@/lib/mocks/Mocks";
 
 export default function GeneralFeed({
     region,

@@ -20,7 +20,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { PostProps } from "@/types/post";
-import { PostMocks } from "@/lib/mocks/mocks";
+import { PostMocks } from "@/lib/mocks/Mocks";
 
 export default function Page() {
     const data: PostProps = PostMocks[0];

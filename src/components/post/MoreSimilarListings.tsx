@@ -1,6 +1,6 @@
 "use client";
 
-import { PostMocks } from "@/lib/mocks/mocks";
+import { PostMocks } from "@/lib/mocks/Mocks";
 import clsx from "clsx";
 import { ChevronDown, ChevronUp, Grid3X3 } from "lucide-react";
 import { useState } from "react";
