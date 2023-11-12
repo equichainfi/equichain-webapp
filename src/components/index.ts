@@ -119,7 +119,7 @@ import {
 } from "./ui/Card";
 import { Toggle, toggleVariants } from "./ui/Toggle";
 
-import { PostMocks } from "@/lib/mocks/Mocks";
+import { PostMocks } from "../Mocks";
 
 export {
     PostMocks,
