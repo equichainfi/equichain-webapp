@@ -16,10 +16,11 @@ export default function GeneralFeed({
             ? PostMocks.filter(
                   (post) =>
                       post.area.includes(region) &&
-                      propertyTypes.includes(post.features.type),
+                      propertyTypes.includes(post.features.typeValue),
               )
             : PostMocks.filter((post) => post.area.includes(region));
 
+    console.log(filteredPosts);
     return (
         <PostFeed
             initialPosts={filteredPosts}

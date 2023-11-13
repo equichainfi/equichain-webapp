@@ -13,7 +13,7 @@ export const PostMocks: PostProps[] = [
         area: "new_york_ny",
         postId: "0x2ced5bc349d9241a314d3739f12f5f6f2bda6a69",
         features: {
-            typeValue: "single_family",
+            typeValue: "mobile",
             type: "Single Family",
             city: "New York",
             homeSize: "2678 sq. ft",

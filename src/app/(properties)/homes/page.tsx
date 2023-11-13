@@ -31,7 +31,7 @@ const regions = [
 
 export default function Page() {
     const [open, setOpen] = useState<boolean>(false);
-    const [showFilters, setShowFilters] = useState<boolean>(false);
+    const [showFilters, setShowFilters] = useState<boolean>(true);
     const [value, setValue] = useState<string>("");
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
@@ -73,7 +73,7 @@ export default function Page() {
             label: "Other",
         },
     ];
-
+    console.log(selectedTypes);
     return (
         <main className="px-2 py-5 sm:px-10 lg:px-16 xl:px-20 2xl:px-24">
             <section className="flex flex-col my-20">
