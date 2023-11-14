@@ -2,6 +2,10 @@
 "use client";
 
 import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
     Button,
     Command,
     CommandEmpty,
@@ -13,67 +17,33 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components";
+import { p_types, regions, status } from "@/lib/static/data";
 import { cn } from "@/lib/utils";
 import clsx from "clsx";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { useState } from "react";
 
-const regions = [
-    {
-        value: "new_york_ny",
-        label: "New York / New Jersey, NY",
-    },
-    {
-        value: "atlanta_ga",
-        label: "Atlanta, GA",
-    },
-];
+interface MinMax {
+    min?: string;
+    max?: string;
+}
 
 export default function Page() {
     const [open, setOpen] = useState<boolean>(false);
     const [showFilters, setShowFilters] = useState<boolean>(true);
     const [value, setValue] = useState<string>("");
     const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+    const [selectedPostStatus, setSelectedPostStatus] = useState<string[]>([]);
+    const [selectedPrice, setSelectedPrice] = useState<MinMax>();
+    const [selectedYearBuilt, setSelectedYearBuilt] = useState<MinMax>();
 
-    const p_types = [
-        {
-            value: "single_family",
-            label: "Single Family",
-        },
-        {
-            value: "condo",
-            label: "Condo",
-        },
-        {
-            value: "townhome",
-            label: "Townhome",
-        },
-        {
-            value: "multi_family",
-            label: "Multi Family",
-        },
-        {
-            value: "land",
-            label: "Land",
-        },
-        {
-            value: "mobile",
-            label: "Mobile",
-        },
-        {
-            value: "apartment",
-            label: "Apartment",
-        },
-        {
-            value: "farm",
-            label: "Farm",
-        },
-        {
-            value: "other",
-            label: "Other",
-        },
-    ];
-    console.log(selectedTypes);
+    console.log(
+        selectedTypes,
+        selectedPostStatus,
+        selectedPrice,
+        selectedYearBuilt,
+    );
+
     return (
         <main className="px-2 py-5 sm:px-10 lg:px-16 xl:px-20 2xl:px-24">
             <section className="flex flex-col my-20">
@@ -158,46 +128,179 @@ export default function Page() {
                                 showFilters ? "col-span-1" : "hidden",
                             )}
                         >
-                            <div>
-                                <h1 className="mb-5 text-secondary">
-                                    PROPERTY TYPE
-                                </h1>
-                                <section className="flex items-center justify-start flex-wrap gap-2">
-                                    {p_types.map((p_type) => (
-                                        <button
-                                            onClick={() => {
-                                                if (
-                                                    selectedTypes.includes(
-                                                        p_type.value,
-                                                    )
-                                                ) {
-                                                    setSelectedTypes(
-                                                        selectedTypes.filter(
-                                                            (type) =>
-                                                                type !==
+                            <Accordion type="single" collapsible>
+                                <AccordionItem value="item-1">
+                                    <AccordionTrigger>
+                                        PROPERTY TYPE
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <section className="flex items-center justify-start flex-wrap gap-2">
+                                            {p_types.map((p_type) => (
+                                                <button
+                                                    onClick={() => {
+                                                        if (
+                                                            selectedTypes.includes(
                                                                 p_type.value,
-                                                        ),
-                                                    );
-                                                } else {
-                                                    setSelectedTypes([
-                                                        ...selectedTypes,
-                                                        p_type.value,
-                                                    ]);
-                                                }
-                                            }}
-                                            key={p_type.value}
-                                            className={clsx(
-                                                "flex items-center justify-center border border-zinc-200 rounded-full hover:border-zinc-300 duration-300 ease-in-out px-2 py-1",
-                                                selectedTypes.includes(
-                                                    p_type.value,
-                                                ) && "bg-zinc-200",
-                                            )}
-                                        >
-                                            {p_type.label}
-                                        </button>
-                                    ))}
-                                </section>
-                            </div>
+                                                            )
+                                                        ) {
+                                                            setSelectedTypes(
+                                                                selectedTypes.filter(
+                                                                    (type) =>
+                                                                        type !==
+                                                                        p_type.value,
+                                                                ),
+                                                            );
+                                                        } else {
+                                                            setSelectedTypes([
+                                                                ...selectedTypes,
+                                                                p_type.value,
+                                                            ]);
+                                                        }
+                                                    }}
+                                                    key={p_type.value}
+                                                    className={clsx(
+                                                        "flex items-center justify-center border border-zinc-200 rounded-full hover:border-zinc-300 duration-300 ease-in-out px-2 py-1",
+                                                        selectedTypes.includes(
+                                                            p_type.value,
+                                                        ) && "bg-zinc-200",
+                                                    )}
+                                                >
+                                                    {p_type.label}
+                                                </button>
+                                            ))}
+                                        </section>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                            <Accordion type="single" collapsible>
+                                <AccordionItem value="item-1">
+                                    <AccordionTrigger>STATUS</AccordionTrigger>
+                                    <AccordionContent>
+                                        <section className="flex items-start justify-start flex-col gap-2">
+                                            {status.map((stat) => (
+                                                <div
+                                                    key={stat.value}
+                                                    className="flex items-center justify-start gap-1"
+                                                >
+                                                    <input
+                                                        type="checkbox"
+                                                        name={stat.value}
+                                                        id={stat.value}
+                                                        onClick={() =>
+                                                            setSelectedPostStatus(
+                                                                selectedPostStatus.includes(
+                                                                    stat.value,
+                                                                )
+                                                                    ? selectedPostStatus.filter(
+                                                                          (
+                                                                              status,
+                                                                          ) =>
+                                                                              status !==
+                                                                              stat.value,
+                                                                      )
+                                                                    : [
+                                                                          ...selectedPostStatus,
+                                                                          stat.value,
+                                                                      ],
+                                                            )
+                                                        }
+                                                        className="w-4 h-4 cursor-pointer"
+                                                    />
+                                                    <label>{stat.label}</label>
+                                                </div>
+                                            ))}
+                                        </section>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                            <Accordion type="single" collapsible>
+                                <AccordionItem value="item-1">
+                                    <AccordionTrigger>PRICE</AccordionTrigger>
+                                    <AccordionContent>
+                                        <section className="flex items-start justify-start gap-1 p-1 border w-min mb-2">
+                                            <label htmlFor="">$</label>
+                                            <input
+                                                type="number"
+                                                name="min"
+                                                id="min"
+                                                placeholder="Min"
+                                                min={0}
+                                                step={0.0001}
+                                                className="h-5"
+                                                onChange={(e) => {
+                                                    setSelectedPrice({
+                                                        ...selectedPrice,
+                                                        min: e.target.value,
+                                                    });
+                                                }}
+                                            />
+                                        </section>
+                                        <section className="flex items-start justify-start gap-1 p-1 border w-min">
+                                            <label htmlFor="">$</label>
+                                            <input
+                                                type="number"
+                                                name="max"
+                                                id="max"
+                                                placeholder="Max"
+                                                className="h-5"
+                                                min={selectedPrice?.min}
+                                                step={0.0001}
+                                                onChange={(e) => {
+                                                    setSelectedPrice({
+                                                        ...selectedPrice,
+                                                        max: e.target.value,
+                                                    });
+                                                }}
+                                            />
+                                        </section>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
+                            <Accordion type="single" collapsible>
+                                <AccordionItem value="item-1">
+                                    <AccordionTrigger>
+                                        YEAR BUILT
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <section className="flex items-start justify-start gap-1 p-1 border w-min mb-2">
+                                            <label htmlFor="">$</label>
+                                            <input
+                                                type="number"
+                                                name="min"
+                                                id="min"
+                                                placeholder="Min"
+                                                min={0}
+                                                step={0.0001}
+                                                className="h-5"
+                                                onChange={(e) => {
+                                                    setSelectedYearBuilt({
+                                                        ...selectedYearBuilt,
+                                                        min: e.target.value,
+                                                    });
+                                                }}
+                                            />
+                                        </section>
+                                        <section className="flex items-start justify-start gap-1 p-1 border w-min">
+                                            <label htmlFor="">$</label>
+                                            <input
+                                                type="number"
+                                                name="max"
+                                                id="max"
+                                                placeholder="Max"
+                                                className="h-5"
+                                                min={selectedYearBuilt?.min}
+                                                step={0.0001}
+                                                onChange={(e) => {
+                                                    setSelectedYearBuilt({
+                                                        ...selectedYearBuilt,
+                                                        max: e.target.value,
+                                                    });
+                                                }}
+                                            />
+                                        </section>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
                         </nav>
                     )}
                     <div
@@ -212,6 +315,7 @@ export default function Page() {
                             region={value}
                             propertyTypes={selectedTypes}
                             filtersAreVisible={showFilters}
+                            status={selectedPostStatus}
                         />
                     </div>
                 </main>

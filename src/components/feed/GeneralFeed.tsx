@@ -6,10 +6,12 @@ export default function GeneralFeed({
     region,
     propertyTypes,
     filtersAreVisible,
+    status,
 }: {
     region: string;
     propertyTypes: string[];
     filtersAreVisible: boolean;
+    status: string[];
 }) {
     const filteredPosts =
         propertyTypes.length > 0
@@ -20,7 +22,6 @@ export default function GeneralFeed({
               )
             : PostMocks.filter((post) => post.area.includes(region));
 
-    console.log(filteredPosts);
     return (
         <PostFeed
             initialPosts={filteredPosts}

@@ -12,6 +12,7 @@ export const PostMocks: PostProps[] = [
         datePosted: "21 grudnia 2023 at 12:36 PM",
         area: "new_york_ny",
         postId: "0x2ced5bc349d9241a314d3739f12f5f6f2bda6a69",
+        status: "buy_now",
         features: {
             typeValue: "mobile",
             type: "Single Family",
@@ -95,6 +96,7 @@ export const PostMocks: PostProps[] = [
         datePosted: "21 grudnia 2023 at 12:36 PM",
         area: "Toronto",
         postId: "0x2ced5bc349d9241a314d3739f1af5f6f2bda6a68",
+        status: "buy_now",
         features: {
             typeValue: "single_family",
             type: "Single Family",
@@ -177,6 +179,7 @@ export const PostMocks: PostProps[] = [
         datePosted: "2 grudnia 2023 at 12:36 PM",
         area: "Miami",
         postId: "0x2ced5bc349d9241a314d3739f12f5f6f2bda6a68",
+        status: "live_auction",
         features: {
             typeValue: "single_family",
             type: "Single Family",
@@ -259,6 +262,7 @@ export const PostMocks: PostProps[] = [
         datePosted: "2 grudnia 2023 at 12:36 PM",
         area: "Miami",
         postId: "0x2ced5bc349d9241a314d3739f12f5f6f2bda6a68",
+        status: "upcoming_auction",
         features: {
             typeValue: "single_family",
             type: "Single Family",
