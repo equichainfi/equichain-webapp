@@ -9,9 +9,6 @@ const nextConfig = {
             "images.crowdspring.com",
         ],
     },
-    experimental: {
-        serverComponents: true,
-    },
 };
 
 module.exports = nextConfig;

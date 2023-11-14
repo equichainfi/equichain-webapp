@@ -1,0 +1,20 @@
+Route (app)                              Size     First Load JS
+┌ ○ /                                    163 B          84.6 kB
+├ ○ /_not-found                          0 B                0 B
+├ ○ /dashboard                           163 B          84.6 kB
+├ ○ /homes                               1.78 kB         184 kB
+├ λ /homes/[region]                      163 B          84.6 kB
+├ λ /homes/[region]/[postId]             328 B           182 kB
+├ ○ /icon.svg                            0 B                0 B
+├ ○ /lands                               163 B          84.6 kB
+├ ○ /robots.txt                          0 B                0 B
+├ ○ /sell                                163 B          84.6 kB
+├ λ /u/[username]                        163 B          84.6 kB
+├ ○ /w/contact                           163 B          84.6 kB
+├ ○ /w/safety                            163 B          84.6 kB
+└ ○ /w/terms                             163 B          84.6 kB
++ First Load JS shared by all            84.5 kB
+  ├ chunks/472-0a4dd5fdf8fb22f4.js       29.2 kB
+  ├ chunks/fd9d1056-25cd04371b7fa3e2.js  53.3 kB
+  ├ chunks/main-app-48f7fcef8eeed0bd.js  219 B
+  └ chunks/webpack-63bc2e8cbd17cfb6.js   1.75 kB

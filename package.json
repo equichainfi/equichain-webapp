@@ -79,7 +79,7 @@
         "@typescript-eslint/eslint-plugin": "^6.7.3",
         "@typescript-eslint/parser": "^6.7.3",
         "@upstash/redis": "^1.24.3",
-        "autoprefixer": "latest",
+        "autoprefixer": "^10.4.16",
         "dotenv": "^16.3.1",
         "drizzle-kit": "^0.19.13",
         "drizzle-orm": "^0.28.6",
