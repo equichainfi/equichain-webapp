@@ -118,7 +118,7 @@ import {
     CardContent,
 } from "./ui/Card";
 import { Toggle, toggleVariants } from "./ui/Toggle";
-import { Checkbox } from "./ui/checkbox";
+import { Checkbox } from "./ui/Checkbox";
 
 import { PostMocks } from "../Mocks";
 
