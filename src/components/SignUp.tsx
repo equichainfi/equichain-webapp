@@ -1,5 +1,4 @@
 import UserAuthForm from "@/components/UserAuthForm";
-import Link from "next/link";
 import { LogoPlain } from "../../public";
 
 const SignUp = () => {
@@ -18,12 +17,12 @@ const SignUp = () => {
             <UserAuthForm />
             <p className="px-8 text-center text-sm text-muted-foreground">
                 Already Equichain.fi user?{" "}
-                <Link
+                {/* <Link
                     href="/sign-in"
                     className="hover:text-brand text-sm underline underline-offset-4"
                 >
                     Sign In
-                </Link>
+                </Link> */}
             </p>
         </main>
     );

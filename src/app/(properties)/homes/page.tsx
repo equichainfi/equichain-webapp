@@ -37,13 +37,6 @@ export default function Page() {
     const [selectedPrice, setSelectedPrice] = useState<MinMax>();
     const [selectedYearBuilt, setSelectedYearBuilt] = useState<MinMax>();
 
-    console.log(
-        selectedTypes,
-        selectedPostStatus,
-        selectedPrice,
-        selectedYearBuilt,
-    );
-
     return (
         <main className="px-2 py-5 sm:px-10 lg:px-16 xl:px-20 2xl:px-24">
             <section className="flex flex-col my-20">
