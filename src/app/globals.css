@@ -33,6 +33,9 @@
     .text-primary {
         color: #0038ff;
     }
+    .text-secondary {
+        color: #b1b1b1;
+    }
 }
 
 ::selection {

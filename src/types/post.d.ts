@@ -8,6 +8,7 @@ export type PostProps = {
     datePosted: string;
     area: string;
     postId: string;
+    status: string; //todo change to enum
     features: PostFeatures;
     details: PostDetails;
     listings: PostListings[];
@@ -18,6 +19,7 @@ export type PostProps = {
 };
 
 export type PostFeatures = {
+    typeValue: string;
     type: string;
     city: string;
     homeSize: string;

@@ -1,7 +1,6 @@
 "use client";
 
 import UserAuthForm from "@/components/UserAuthForm";
-import Link from "next/link";
 import { LogoPlain } from "../../public";
 
 const SignIn = () => {
@@ -20,12 +19,12 @@ const SignIn = () => {
             <UserAuthForm />
             <p className="px-8 text-center text-sm text-muted-foreground">
                 New to Equichain.fi?{" "}
-                <Link
+                {/* <Link
                     href="/sign-up"
                     className="hover:text-brand text-sm underline underline-offset-4"
                 >
                     Sign Up
-                </Link>
+                </Link> */}
             </p>
         </main>
     );

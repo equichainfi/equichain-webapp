@@ -97,14 +97,14 @@ export default function Header() {
                 {!userLoggedIn && (
                     <>
                         <Link
-                            href="/sign-in"
+                            href="/" //todo path to sign up/in
                             className="xl:p-0 pr-3 hidden md:flex"
                         >
                             Log in
                         </Link>
                         <Dot className="hidden xl:flex" />
                         <Link
-                            href="/sign-up"
+                            href="/" //todo path to sign up/in
                             className="bg-black rounded-full text-white font-semibold text-center flex-nowrap whitespace-nowrap px-4 py-2 hover:opacity-60 duration-500 transition ease-in-out"
                         >
                             Sign up
