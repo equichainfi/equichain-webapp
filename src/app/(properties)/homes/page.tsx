@@ -113,14 +113,14 @@ export default function Page() {
             <section className="flex flex-col items-center justify-between w-full">
                 <header className="flex items-center justify-between w-full pb-4">
                     <Button
-                        className="text-black"
+                        className="text-black p-0"
                         onClick={() => setShowFilters(!showFilters)}
                     >
                         {showFilters ? "Hide" : "Show"} filters
                     </Button>
                     <p className="text-secondary">67,234 results</p>
                 </header>
-                <main className="grid gap-3 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5">
+                <main className="grid gap-3 w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-3 2xl:grid-cols-5">
                     {showFilters && (
                         <nav
                             className={clsx(

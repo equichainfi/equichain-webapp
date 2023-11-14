@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable indent */
 import { PostFeed } from "..";
 import { PostMocks } from "@/components";
