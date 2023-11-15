@@ -14,11 +14,10 @@
         "prettier": "prettier . --write",
         "prettier:check": "prettier . --check",
         "check": "lint-staged && npm run prettier && npm run lint && npm run test",
-        "db:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
-        "db:push": "drizzle-kit push:pg ",
-        "db:introspect": "drizzle-kit introspect:pg --config=drizzle.config.ts",
-        "db:check": "drizzle-kit introspect:pg --config=drizzle.config.ts",
-        "studio": "drizzle-kit studio"
+        "db:migrate": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\"}' knex migrate:latest",
+        "db:migrate:undo": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\"}' knex migrate:down",
+        "db:migrate:make": "TS_NODE_COMPILER_OPTIONS='{ \"module\": \"commonjs\"}' knex migrate:make",
+        "d:up": "docker compose up"
     },
     "husky": {
         "hooks": {
@@ -57,17 +56,19 @@
         "date-fns": "^2.30.0",
         "flowbite-react": "^0.6.4",
         "husky-init": "^8.0.0",
+        "knex": "^3.0.1",
         "lucide-react": "^0.284.0",
         "nanoid": "^5.0.1",
         "next": "latest",
         "next-auth": "^4.24.4",
-        "postgres": "^3.4.2",
+        "postgres": "^3.4.3",
         "react": "latest",
         "react-bootstrap": "^2.9.1",
         "react-dom": "latest",
         "react-responsive-carousel": "^3.2.23",
         "tailwind-merge": "^1.14.0",
-        "tailwindcss-animate": "^1.0.7"
+        "tailwindcss-animate": "^1.0.7",
+        "ts-node": "^10.9.1"
     },
     "devDependencies": {
         "@commitlint/config-conventional": "^17.7.0",
