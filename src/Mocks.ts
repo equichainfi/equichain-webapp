@@ -14,7 +14,7 @@ export const PostMocks: PostProps[] = [
         postId: "0x2ced5bc349d9241a314d3739f12f5f6f2bda6a69",
         status: "buy_now",
         features: {
-            typeValue: "mobile",
+            typeValue: "single_family",
             type: "Single Family",
             city: "New York",
             homeSize: "2678 sq. ft",

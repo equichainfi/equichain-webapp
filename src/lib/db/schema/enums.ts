@@ -8,10 +8,12 @@ export const PostEnum = pgEnum("post_status", [
 ]);
 
 export const PostCategoryEnum = pgEnum("post_category", [
-    "house",
-    "plot",
-    "commercial",
+    "single_family",
+    "condo",
+    "townhouse",
+    "multi_family",
+    "mobile",
+    "apartment",
     "farm",
-    "industrial",
     "other",
 ]);

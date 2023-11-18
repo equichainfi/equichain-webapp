@@ -1,11 +1,9 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import { migrate } from "drizzle-orm/postgres-js/migrator";
-import postgres from "postgres";
+import { neon, neonConfig } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/neon-http";
 import * as dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
-const migrationClient = postgres(process.env.DATABASE_URL!, { max: 1 });
-migrate(drizzle(migrationClient), { migrationsFolder: "drizzle" });
+neonConfig.fetchConnectionCache = true;
 
-const queryClient = postgres(process.env.DATABASE_URL!);
-export const db = drizzle(queryClient);
+const sql = neon(process.env.DRIZZLE_DATABASE_URL!);
+export const db = drizzle(sql);
