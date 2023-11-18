@@ -4,7 +4,7 @@ dotenv.config({ path: ".env.local" });
 
 export default {
     driver: "pg",
-    schema: "src/lib/db/schema.ts",
+    schema: "src/lib/db/schema/*",
     dbCredentials: {
         connectionString: process.env.DATABASE_URL!,
         user: process.env.DATABASE_USER!,
