@@ -47,4 +47,5 @@ src/lib/db/generated
 # husky
 .husky
 
+# mocks
 src/lib/mocks
