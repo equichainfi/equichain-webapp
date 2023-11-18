@@ -1,15 +1,25 @@
-import { date, pgTable, serial, varchar } from "drizzle-orm/pg-core";
-import { Account } from "./account";
+import {
+    boolean,
+    pgTable,
+    serial,
+    timestamp,
+    varchar,
+} from "drizzle-orm/pg-core";
 
 export const User = pgTable("user", {
     id: serial("id").primaryKey(),
-    name: varchar("name", { length: 32 }).notNull(),
-    lastName: varchar("last_name", { length: 64 }).notNull(),
+    first_name: varchar("name", { length: 32 }).notNull(),
+    last_name: varchar("last_name", { length: 64 }).notNull(),
     email: varchar("email", { length: 256 }).notNull().unique(),
-    emailVerified: date("email_verified").notNull(),
+    email_verified: boolean("email_verified").notNull(),
 
-    username: varchar("username", { length: 64 }).notNull().unique(),
     image: varchar("image", { length: 256 }).notNull(),
+    created_at: timestamp("created_at").notNull(),
 
-    accounts: serial("accounts").references(() => Account.id),
+    country: varchar("country", { length: 64 }).notNull(),
+    city: varchar("city", { length: 64 }).notNull(),
+    address: varchar("address", { length: 256 }).notNull(),
+    zip: varchar("zip", { length: 16 }).notNull(),
+    phone: varchar("phone", { length: 16 }).notNull(),
+    phone_verified: boolean("phone_verified").notNull(),
 });

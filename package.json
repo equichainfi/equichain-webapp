@@ -11,7 +11,7 @@
         "lint-staged": "next lint --fix",
         "test": "vitest",
         "prepare": "husky install",
-        "prettier": "prettier . --write",
+        "prettier": "prettier . --write --ignore-path .gitignore",
         "prettier:check": "prettier . --check",
         "check": "lint-staged && npm run prettier && npm run lint && npm run test",
         "d:up": "docker compose up",
@@ -23,9 +23,9 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm prettier && lint-staged && npm run lint",
-            "pre-push": "npm prettier && npm test && npm run build",
-            "pre-rebase": "npm prettier && npm test && npm run build"
+            "pre-commit": "npm run prettier && lint-staged && npm run lint",
+            "pre-push": "npm run prettier && npm test && npm run build",
+            "pre-rebase": "npm run prettier && npm test && npm run build"
         }
     },
     "lint-staged": {
