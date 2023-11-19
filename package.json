@@ -8,7 +8,7 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "lint-staged": "next lint --fix",
+        "lint-staged": "next lint --fix --ignore-path .gitignore",
         "test": "vitest",
         "prepare": "husky install",
         "prettier": "prettier . --write --ignore-path .gitignore",
@@ -23,15 +23,15 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run prettier && lint-staged && npm run lint",
+            "pre-commit": "npm run prettier && npm run lint-staged && npm run lint",
             "pre-push": "npm run prettier && npm test && npm run build",
             "pre-rebase": "npm run prettier && npm test && npm run build"
         }
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
-            "eslint --fix",
-            "prettier --write"
+            "eslint --fix --ignore-path .gitignore",
+            "prettier --write --ignore-path .gitignore"
         ]
     },
     "dependencies": {

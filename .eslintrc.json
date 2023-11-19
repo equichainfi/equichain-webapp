@@ -23,5 +23,13 @@
         "semi": ["error", "always"],
         "react/react-in-jsx-scope": "off",
         "no-unused-vars": "warn"
-    }
+    },
+    "ignorePatterns": [
+        "node_modules/*",
+        ".next/*",
+        ".out/*",
+        "!.prettierrc.js",
+        "next.config.js",
+        "./src/lib/db/generated/*"
+    ]
 }
