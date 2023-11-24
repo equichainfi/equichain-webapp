@@ -22,7 +22,7 @@ export const navOptions: NavOptions = [
     { value: "Buy Properties", link: "/homes", icon: <Hotel /> },
     { value: "Buy Land", link: "/lands", icon: <LandPlot /> },
     { value: "Sell", link: "/sell", icon: <Bitcoin /> },
-    { value: "Dashboard", link: "/dashboard", icon: <User /> },
+    { value: "Account", link: "/account", icon: <User /> },
     { value: "Safety", link: "/w/safety", icon: <ShieldCheck /> },
     { value: "Contact", link: "/w/contact", icon: <LifeBuoy /> },
     { value: "Terms of Policy", link: "/w/terms", icon: <HeartHandshake /> },
