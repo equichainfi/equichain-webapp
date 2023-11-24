@@ -23,6 +23,16 @@ import PostItemActivity from "./post/PostItemActivity";
 import MoreSimilarListings from "./post/MoreSimilarListings";
 import Comment from "./Comment";
 
+// User
+import UserMain from "./dashboard/user/UserMain";
+import Deals from "./dashboard/user/Deals";
+import Created from "./dashboard/user/Created";
+import Activity from "./dashboard/user/Activity";
+import Collected from "./dashboard/user/Collected";
+import Favorites from "./dashboard/user/Favorites";
+import OffersMade from "./dashboard/user/OffersMade";
+import OffersRecieved from "./dashboard/user/OffersRecieved";
+
 // CONSTANTS
 import Footer from "./constants/Footer";
 import Header from "./constants/Header";
@@ -124,6 +134,14 @@ import { Checkbox } from "./ui/Checkbox";
 import { PostMocks } from "../Mocks";
 
 export {
+    UserMain,
+    Deals,
+    Created,
+    Activity,
+    Collected,
+    Favorites,
+    OffersMade,
+    OffersRecieved,
     ToggleGroupItem,
     ToggleGroup,
     PostMocks,
