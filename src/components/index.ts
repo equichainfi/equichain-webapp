@@ -68,6 +68,7 @@ import {
     SheetTrigger,
 } from "./ui/Sheet";
 import { Skeleton } from "./ui/Skeleton";
+import { ToggleGroup, ToggleGroupItem } from "./ui/ToggleGroup";
 import {
     Table,
     TableBody,
@@ -123,6 +124,8 @@ import { Checkbox } from "./ui/Checkbox";
 import { PostMocks } from "../Mocks";
 
 export {
+    ToggleGroupItem,
+    ToggleGroup,
     PostMocks,
     Checkbox,
     Toggle,
