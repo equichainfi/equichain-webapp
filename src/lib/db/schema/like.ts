@@ -1,10 +1,11 @@
 import { pgTable, text } from "drizzle-orm/pg-core";
-import { Post, Account } from ".";
+import { Post, User } from ".";
 
 export const Like = pgTable("like", {
-    accountId: text("account_id")
+    id: text("id").primaryKey(),
+    userId: text("user_id")
         .notNull()
-        .references(() => Account.id),
+        .references(() => User.id),
     postId: text("post_id")
         .notNull()
         .references(() => Post.id),

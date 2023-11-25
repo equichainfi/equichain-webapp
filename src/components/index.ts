@@ -3,10 +3,6 @@ import CloseModal from "./CloseModal";
 import GoBackButton from "./GoBackButton";
 import { Icons } from "./Icons";
 import Providers from "./Providers";
-import SignIn from "./SignIn";
-import SignInPoster from "./SignInPoster";
-import SignUp from "./SignUp";
-import UserAuthForm from "./UserAuthForm";
 import CustomFeed from "./feed/CustomFeed";
 import GeneralFeed from "./feed/GeneralFeed";
 import Post from "./post/Post";
@@ -22,6 +18,7 @@ import PostPricing from "./post/PostPricing";
 import PostItemActivity from "./post/PostItemActivity";
 import MoreSimilarListings from "./post/MoreSimilarListings";
 import Comment from "./Comment";
+import { ThirdwebProvider } from "./ThirdwebProvider";
 
 // CONSTANTS
 import Footer from "./constants/Footer";
@@ -137,6 +134,7 @@ export {
     CardContent,
     Input,
     Accordion,
+    ThirdwebProvider,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
@@ -193,9 +191,6 @@ export {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-    SignIn,
-    SignInPoster,
-    SignUp,
     Skeleton,
     Table,
     TableBody,
@@ -209,7 +204,6 @@ export {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-    UserAuthForm,
     badgeVariants,
     Command,
     CommandDialog,

@@ -6,23 +6,23 @@ import {
     timestamp,
     varchar,
 } from "drizzle-orm/pg-core";
-import { Account } from ".";
-import { PostCategoryEnum, PostEnum } from "./enums";
+import { User } from ".";
+// import { PostCategoryEnum, PostEnum } from "./enums";
 
 /// @OlivierKobialka: post id is IPFS hash
 
 export const Post = pgTable("post", {
     id: text("id").primaryKey(),
     slug: varchar("slug", { length: 256 }).notNull(),
-    status: PostEnum("status").notNull().default("pending"),
+    status: text("status").notNull().default("pending"),
     images: text("images").array().notNull(),
     isVerified: boolean("is_verified").notNull(),
     createdAt: timestamp("created_at").notNull(),
-    category: PostCategoryEnum("category").notNull(),
+    category: text("category").notNull(),
 
     metadata: json("metadata").notNull(),
-    authorId: text("author_id")
-        .references(() => Account.id)
+    userId: text("user_id")
+        .references(() => User.id)
         .notNull(),
 });
 

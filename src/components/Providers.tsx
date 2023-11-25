@@ -1,17 +1,48 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { SessionProvider } from "next-auth/react";
 import React from "react";
+import {
+    ThirdwebProvider,
+    metamaskWallet,
+    coinbaseWallet,
+    walletConnect,
+    localWallet,
+    trustWallet,
+    rainbowWallet,
+    phantomWallet,
+    en,
+} from "@thirdweb-dev/react";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
-    const queryClient = new QueryClient();
+    // const queryClient = new QueryClient();
 
     return (
-        <QueryClientProvider client={queryClient}>
+        <ThirdwebProvider
+            activeChain="mumbai"
+            clientId={process.env.THIRDWEB_CLIENT_ID}
+            locale={en()}
+            supportedWallets={[
+                metamaskWallet({ recommended: true }),
+                coinbaseWallet({ recommended: true }),
+                walletConnect(),
+                localWallet(),
+                trustWallet(),
+                rainbowWallet(),
+                phantomWallet(),
+            ]}
+            // authConfig={{
+            //     authUrl: "/api/auth",
+            //     domain: "http://localhost:3000",
+            // }}
+        >
+            {/* <QueryClientProvider client={queryClient}> */}
             <SessionProvider>{children}</SessionProvider>
-        </QueryClientProvider>
+            {/* </QueryClientProvider> */}
+        </ThirdwebProvider>
     );
 };
 
 export default Providers;
+
+export { ThirdwebProvider } from "@thirdweb-dev/react";

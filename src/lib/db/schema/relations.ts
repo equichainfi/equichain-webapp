@@ -1,25 +1,21 @@
 import { relations } from "drizzle-orm";
-import { Account, Comment, CommentLike, Like, Post, User } from ".";
+import { Comment, CommentLike, Like, Post, User, Wallet } from ".";
 
-export const userRelations = relations(User, ({ many }) => ({
-    accounts: many(Account),
-}));
-
-export const accountRelations = relations(Account, ({ one, many }) => ({
-    user: one(User, {
-        fields: [Account.id],
-        references: [User.id],
-    }),
+export const userRelations = relations(User, ({ one, many }) => ({
     posts: many(Post),
     comments: many(Comment),
     likes: many(Like),
     commentLikes: many(CommentLike),
+    wallet: one(Wallet, {
+        fields: [User.id],
+        references: [Wallet.userId],
+    }),
 }));
 
 export const postRelations = relations(Post, ({ one, many }) => ({
-    author: one(Account, {
-        fields: [Post.authorId],
-        references: [Account.id],
+    author: one(User, {
+        fields: [Post.userId],
+        references: [User.id],
     }),
     comments: many(Comment),
     likes: many(Like),
@@ -30,9 +26,9 @@ export const commentsRelations = relations(Comment, ({ one, many }) => ({
         fields: [Comment.postId],
         references: [Post.id],
     }),
-    author: one(Account, {
-        fields: [Comment.authorId],
-        references: [Account.id],
+    author: one(User, {
+        fields: [Comment.userId],
+        references: [User.id],
     }),
     likes: many(CommentLike),
 }));
@@ -42,9 +38,9 @@ export const postLikesRelations = relations(Like, ({ one }) => ({
         fields: [Like.postId],
         references: [Post.id],
     }),
-    author: one(Account, {
-        fields: [Like.accountId],
-        references: [Account.id],
+    author: one(User, {
+        fields: [Like.userId],
+        references: [User.id],
     }),
 }));
 
@@ -53,8 +49,8 @@ export const commentLikesRelations = relations(CommentLike, ({ one }) => ({
         fields: [CommentLike.commentId],
         references: [Comment.id],
     }),
-    user: one(Account, {
-        fields: [CommentLike.accountId],
-        references: [Account.id],
+    user: one(User, {
+        fields: [CommentLike.userId],
+        references: [User.id],
     }),
 }));

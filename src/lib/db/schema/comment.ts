@@ -1,12 +1,12 @@
 import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
-import { Account, Post } from ".";
+import { User, Post } from ".";
 
 export const Comment = pgTable("comment", {
     id: text("id").primaryKey(),
     text: text("text").notNull(),
     createdAt: timestamp("created_at").notNull(),
-    authorId: text("author_id")
-        .references(() => Account.id)
+    userId: text("user_id")
+        .references(() => User.id)
         .notNull(),
     postId: text("post_id")
         .references(() => Post.id)

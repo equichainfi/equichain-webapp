@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
+import { ConnectWallet, lightTheme } from "@thirdweb-dev/react";
 import {
     Bitcoin,
-    Dot,
     HeartHandshake,
     Hotel,
     LandPlot,
@@ -30,6 +28,7 @@ export const navOptions: NavOptions = [
 
 export default function Header() {
     const [showSidebar, setShowSidebar] = useState<boolean>(false);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
 
     return (
@@ -76,7 +75,6 @@ export default function Header() {
                 </div>
             </option>
 
-            {/*  */}
             <div className="hidden 2xl:flex items-center justify-start">
                 {navOptions.slice(0, 3).map((btn, index) => (
                     <Link href={btn.link} key={index} className="mx-1">
@@ -93,23 +91,28 @@ export default function Header() {
             <Logo hideOn="" showOn="2xl:" />
 
             <section className="flex items-center justify-end">
-                {/* {userLoggedIn && <UserButton afterSignOutUrl="/" />} */}
                 {!userLoggedIn && (
-                    <>
-                        <Link
-                            href="/" //todo path to sign up/in
-                            className="xl:p-0 pr-3 hidden md:flex"
-                        >
-                            Log in
-                        </Link>
-                        <Dot className="hidden xl:flex" />
-                        <Link
-                            href="/" //todo path to sign up/in
-                            className="bg-black rounded-full text-white font-semibold text-center flex-nowrap whitespace-nowrap px-4 py-2 hover:opacity-60 duration-500 transition ease-in-out"
-                        >
-                            Sign up
-                        </Link>
-                    </>
+                    <ConnectWallet
+                        theme={lightTheme({
+                            colors: {
+                                accentText: "#0038FF",
+                                accentButtonBg: "#0038FF",
+                            },
+                        })}
+                        modalTitle={"equichain.fi"}
+                        auth={{ loginOptional: false }}
+                        switchToActiveChain={true}
+                        modalSize={"wide"}
+                        welcomeScreen={{
+                            title: "Welcome to equichain.fi",
+                            subtitle: "Please connect your wallet to continue",
+                        }}
+                        modalTitleIconUrl={
+                            "https://ipfs.io/ipfs/QmYjqgYUDnzgvfa1e4WdR7iJWHAnoEmq8ai512x3t91qog?filename=logo.png"
+                        }
+                        termsOfServiceUrl={"/w/terms"}
+                        privacyPolicyUrl={"/w/safety"}
+                    />
                 )}
             </section>
         </div>

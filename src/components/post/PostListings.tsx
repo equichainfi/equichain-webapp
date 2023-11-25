@@ -100,7 +100,7 @@ export default function PostListings({
                                         <TableCell>
                                             <Link
                                                 className="text-blue-400 hover:text-primary duration-300"
-                                                href="/u/Satoshi Nakamoto"
+                                                href={`/u/${listing.from}`}
                                             >
                                                 {listing.from}
                                             </Link>

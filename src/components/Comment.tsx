@@ -13,7 +13,7 @@ import {
 export default function Comment({ comment }: { comment: PostComments }) {
     return (
         <div className="flex flex-col w-full items-start">
-            <header className="w-full flex items-center justify-between">
+            <header className="w-full flex items-center gap-2 justify-between">
                 <Link
                     className="text-blue-400 hover:text-primary duration-300"
                     href={`/u/${comment.author}`}
