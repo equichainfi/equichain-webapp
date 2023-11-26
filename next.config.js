@@ -7,6 +7,7 @@ const nextConfig = {
             "i.seadn.io",
             "thespokesman.net",
             "images.crowdspring.com",
+            "bafybeie2qwrjqtvtil3wyipv5gwndnygy6utn52ekasauudfrbhn7vupwm.ipfs.localhost",
         ],
     },
 };

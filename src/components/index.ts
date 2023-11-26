@@ -18,13 +18,13 @@ import PostPricing from "./post/PostPricing";
 import PostItemActivity from "./post/PostItemActivity";
 import MoreSimilarListings from "./post/MoreSimilarListings";
 import Comment from "./Comment";
-import { ThirdwebProvider } from "./ThirdwebProvider";
 
 // CONSTANTS
 import Footer from "./constants/Footer";
 import Header from "./constants/Header";
 import LeftSidebar from "./constants/LeftSideBar";
 import Logo from "./constants/Logo";
+import ConnectWalletButton from "./constants/connect/ConnectWalletButton";
 
 // UI
 import {
@@ -120,6 +120,7 @@ import { Checkbox } from "./ui/Checkbox";
 import { PostMocks } from "../Mocks";
 
 export {
+    ConnectWalletButton,
     PostMocks,
     Checkbox,
     Toggle,
@@ -134,7 +135,6 @@ export {
     CardContent,
     Input,
     Accordion,
-    ThirdwebProvider,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,

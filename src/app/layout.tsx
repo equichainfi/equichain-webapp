@@ -11,11 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-    children,
-    authModal,
+    children, // authModal,
 }: {
     children: React.ReactNode;
-    authModal: React.ReactNode;
+    // authModal: React.ReactNode;
 }) {
     return (
         <html lang="en">
@@ -23,7 +22,7 @@ export default function RootLayout({
                 <Providers>
                     <Header />
                     {/* AUTH FLOW */}
-                    {authModal}
+                    {/* {authModal} */}
 
                     {children}
                     <Footer />

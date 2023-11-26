@@ -1,6 +1,5 @@
 "use client";
 
-import { ConnectWallet, lightTheme } from "@thirdweb-dev/react";
 import {
     Bitcoin,
     HeartHandshake,
@@ -13,7 +12,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Button, LeftSidebar, Logo } from "..";
+import { Button, ConnectWalletButton, LeftSidebar, Logo } from "..";
 import { SmallLogoPlain } from "../../../public";
 
 export const navOptions: NavOptions = [
@@ -91,29 +90,7 @@ export default function Header() {
             <Logo hideOn="" showOn="2xl:" />
 
             <section className="flex items-center justify-end">
-                {!userLoggedIn && (
-                    <ConnectWallet
-                        theme={lightTheme({
-                            colors: {
-                                accentText: "#0038FF",
-                                accentButtonBg: "#0038FF",
-                            },
-                        })}
-                        modalTitle={"equichain.fi"}
-                        auth={{ loginOptional: false }}
-                        switchToActiveChain={true}
-                        modalSize={"wide"}
-                        welcomeScreen={{
-                            title: "Welcome to equichain.fi",
-                            subtitle: "Please connect your wallet to continue",
-                        }}
-                        modalTitleIconUrl={
-                            "https://ipfs.io/ipfs/QmYjqgYUDnzgvfa1e4WdR7iJWHAnoEmq8ai512x3t91qog?filename=logo.png"
-                        }
-                        termsOfServiceUrl={"/w/terms"}
-                        privacyPolicyUrl={"/w/safety"}
-                    />
-                )}
+                {!userLoggedIn && <ConnectWalletButton />}
             </section>
         </div>
     );
