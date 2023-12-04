@@ -24,6 +24,9 @@
     .signing-page {
         @apply w-screen h-screen absolute z-50 top-0 bg-white flex items-center justify-between;
     }
+    .connect-wallet-button {
+        @apply !text-black !w-full !py-2 !px-3 !bg-white;
+    }
 }
 
 @layer utilities {
