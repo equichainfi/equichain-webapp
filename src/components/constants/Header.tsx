@@ -27,8 +27,6 @@ export const navOptions: NavOptions = [
 
 export default function Header() {
     const [showSidebar, setShowSidebar] = useState<boolean>(false);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-    const [userLoggedIn, setUserLoggedIn] = useState<boolean>(false);
 
     return (
         <div className="px-2 py-5 flex 2xl:grid 2xl:grid-cols-3 sm:px-10 lg:px-16 xl:px-20 2xl:px-24 justify-between bg-white w-screen">
@@ -90,7 +88,7 @@ export default function Header() {
             <Logo hideOn="" showOn="2xl:" />
 
             <section className="flex items-center justify-end">
-                {!userLoggedIn && <ConnectWalletButton />}
+                <ConnectWalletButton />
             </section>
         </div>
     );
