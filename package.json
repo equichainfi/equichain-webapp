@@ -34,6 +34,21 @@
             "prettier --write --ignore-path .gitignore"
         ]
     },
+    "commitlint": {
+        "rules": {
+            "references-empty": [
+                2,
+                "never"
+            ]
+        },
+        "parserPreset": {
+            "parserOpts": {
+                "issuePrefixes": [
+                    "EQC-"
+                ]
+            }
+        }
+    },
     "dependencies": {
         "@auth/drizzle-adapter": "^0.3.5",
         "@mantine/core": "^7.1.7",
@@ -75,7 +90,8 @@
         "ts-node": "^10.9.1"
     },
     "devDependencies": {
-        "@commitlint/config-conventional": "^17.7.0",
+        "@commitlint/cli": "^18.4.3",
+        "@commitlint/config-conventional": "^17.8.1",
         "@neondatabase/serverless": "^0.6.0",
         "@types/node": "latest",
         "@types/pg": "^8.10.9",
@@ -98,7 +114,7 @@
         "eslint-plugin-next": "^0.0.0",
         "eslint-plugin-promise": "^6.1.1",
         "eslint-plugin-react": "^7.33.2",
-        "husky": "^8.0.0",
+        "husky": "^8.0.3",
         "lint-staged": "^14.0.1",
         "pg": "^8.11.3",
         "pino-pretty": "^10.2.3",
