@@ -1,11 +1,12 @@
-// import { pgTable, serial } from "drizzle-orm/pg-core";
-// import {  User } from ".";
+import { pgTable, text } from "drizzle-orm/pg-core";
+import { Post, User } from ".";
 
-// export const Like = pgTable("like", {
-//     userId: serial("user_id")
-//         .notNull()
-//         .references(() => User.id),
-//     postId: serial("post_id")
-//         .notNull()
-//         .references(() => Post.id),
-// });
+export const Like = pgTable("like", {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+        .notNull()
+        .references(() => User.id),
+    postId: text("post_id")
+        .notNull()
+        .references(() => Post.id),
+});

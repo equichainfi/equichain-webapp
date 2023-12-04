@@ -75,7 +75,9 @@ export default function Page() {
                     <header className="flex flex-col">
                         <section className="p-3 h-10 flex items-center justify-between">
                             <div className="flex items-center justify-start gap-2">
-                                <Link href={"/"}>{data.author}</Link>
+                                <Link href={`/u/${data.author}`}>
+                                    {data.author}
+                                </Link>
                                 <Image
                                     src="https://thespokesman.net/wp-content/uploads/2023/05/Twitter_Verified_Badge.svg.png"
                                     alt="Verified"
@@ -96,7 +98,7 @@ export default function Page() {
                             Owned by{" "}
                             <Link
                                 className="text-blue-400 hover:text-primary duration-300"
-                                href="/u/Satoshi Nakamoto"
+                                href={`/u/${data.author}`}
                             >
                                 {data.author}
                             </Link>

@@ -3,10 +3,6 @@ import CloseModal from "./CloseModal";
 import GoBackButton from "./GoBackButton";
 import { Icons } from "./Icons";
 import Providers from "./Providers";
-import SignIn from "./SignIn";
-import SignInPoster from "./SignInPoster";
-import SignUp from "./SignUp";
-import UserAuthForm from "./UserAuthForm";
 import CustomFeed from "./feed/CustomFeed";
 import GeneralFeed from "./feed/GeneralFeed";
 import Post from "./post/Post";
@@ -28,6 +24,7 @@ import Footer from "./constants/Footer";
 import Header from "./constants/Header";
 import LeftSidebar from "./constants/LeftSideBar";
 import Logo from "./constants/Logo";
+import ConnectWalletButton from "./constants/connect/ConnectWalletButton";
 
 // UI
 import {
@@ -123,6 +120,7 @@ import { Checkbox } from "./ui/Checkbox";
 import { PostMocks } from "../Mocks";
 
 export {
+    ConnectWalletButton,
     PostMocks,
     Checkbox,
     Toggle,
@@ -193,9 +191,6 @@ export {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-    SignIn,
-    SignInPoster,
-    SignUp,
     Skeleton,
     Table,
     TableBody,
@@ -209,7 +204,6 @@ export {
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-    UserAuthForm,
     badgeVariants,
     Command,
     CommandDialog,

@@ -113,7 +113,7 @@ export default function PostOffers({ offers }: { offers: PostOffers[] }) {
                                                     <TableCell>
                                                         <Link
                                                             className="text-blue-400 hover:text-primary duration-300"
-                                                            href="/u/Satoshi Nakamoto"
+                                                            href={`/u/${offer.from}`}
                                                         >
                                                             {offer.from}
                                                         </Link>

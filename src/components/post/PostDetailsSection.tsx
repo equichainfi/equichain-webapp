@@ -32,7 +32,7 @@ export default function PostDetailsSection({
                         By{" "}
                         <Link
                             className="text-blue-400 hover:text-primary duration-300"
-                            href="/u/Satoshi Nakamoto"
+                            href={`/u/${author}`}
                         >
                             {author}
                         </Link>

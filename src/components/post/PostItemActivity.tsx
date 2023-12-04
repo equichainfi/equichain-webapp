@@ -220,7 +220,7 @@ export default function PostItemActivity({
                                     <TableCell>
                                         <Link
                                             className="text-blue-400 hover:text-primary duration-300"
-                                            href="/u/Satoshi Nakamoto"
+                                            href={`/u/${activity.from}`}
                                         >
                                             {activity.from}
                                         </Link>
@@ -228,7 +228,7 @@ export default function PostItemActivity({
                                     <TableCell>
                                         <Link
                                             className="text-blue-400 hover:text-primary duration-300"
-                                            href="/u/Satoshi Nakamoto"
+                                            href={`/u/${activity.to}`}
                                         >
                                             {activity.to}
                                         </Link>
@@ -236,7 +236,7 @@ export default function PostItemActivity({
                                     <TableCell>
                                         <Link
                                             className="text-blue-400 hover:text-primary duration-300 flex gap-x-1"
-                                            href="/u/Satoshi Nakamoto"
+                                            href={`/u/${activity.date}`}
                                         >
                                             {activity.date}{" "}
                                             <ExternalLink size={19} />

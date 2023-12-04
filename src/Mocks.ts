@@ -5,7 +5,7 @@ export const PostMocks: PostProps[] = [
     {
         title: "Duplex",
         description: "lore ipsum dolor sit amet",
-        author: "Satoshi Nakamoto",
+        author: "_kvbialka917",
         authorId: "0x2ced5bc349d9241a314d3739f12f5f6f2bda6asd",
         images: [...loginpage_images],
         price: 15,
