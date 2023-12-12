@@ -84,6 +84,8 @@
         "@typescript-eslint/parser": "^6.7.3",
         "@upstash/redis": "^1.24.3",
         "autoprefixer": "^10.4.16",
+        "clipboard-copy": "^4.0.1",
+        "commitlint": "^18.4.3",
         "dotenv": "^16.3.1",
         "drizzle-kit": "^0.19.13",
         "drizzle-orm": "^0.28.6",
@@ -106,5 +108,20 @@
         "tailwindcss": "latest",
         "typescript": "^5.2.2",
         "vitest": "^0.34.6"
+    },
+    "commitlint": {
+        "rules": {
+            "references-empty": [
+                2,
+                "never"
+            ]
+        },
+        "parserPreset": {
+            "parserOpts": {
+                "issuePrefixes": [
+                    "EQC-"
+                ]
+            }
+        }
     }
 }
