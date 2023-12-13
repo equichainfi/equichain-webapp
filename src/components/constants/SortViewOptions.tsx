@@ -12,7 +12,17 @@ import {
     X,
 } from "lucide-react";
 import { useState } from "react";
-import { Checkbox, Popover, PopoverContent, PopoverTrigger } from "..";
+import {
+    Checkbox,
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "..";
 
 const SortViewOptions = () => {
     const [view, setView] = useState<string>("grid");
@@ -80,21 +90,30 @@ const SortViewOptions = () => {
 
             <section>
                 <section className="lg:flex hidden">
-                    <select
-                        name=""
-                        id=""
-                        className="px-3 sm:px-4 py-2 sm:py-3 border bg-white hover:border-zinc-200 border-zinc-100 rounded-xl flex items-center justify-center font-medium sm:text-lg"
-                    >
-                        {sortBys.map((sortBy, index: number) => (
-                            <option
-                                key={index}
-                                value={sortBy.value}
-                                className=""
-                            >
-                                {sortBy.label}
-                            </option>
-                        ))}
-                    </select>
+                    <Select>
+                        <SelectTrigger className="px-3 h-full sm:px-4 py-2 sm:py-3 border hover:border-zinc-200 border-zinc-100 rounded-xl flex items-center justify-center font-medium sm:text-lg">
+                            <SelectValue placeholder="Sort" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-white">
+                            {sortBys.map(
+                                (
+                                    sortBy: {
+                                        value: string;
+                                        label: string;
+                                    },
+                                    index: number,
+                                ) => (
+                                    <SelectItem
+                                        key={index}
+                                        value={sortBy.value}
+                                        className="px-3 my-1 sm:px-4 py-3 sm:py-4 w-full cursor-pointer bg-white hover:bg-zinc-100 rounded-xl flex items-center justify-start font-medium sm:text-lg"
+                                    >
+                                        {sortBy.label}
+                                    </SelectItem>
+                                ),
+                            )}
+                        </SelectContent>
+                    </Select>
                 </section>
                 <section className="lg:hidden flex">
                     <button
