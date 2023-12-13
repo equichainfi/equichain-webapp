@@ -38,6 +38,7 @@ import Footer from "./constants/Footer";
 import Header from "./constants/Header";
 import LeftSidebar from "./constants/LeftSideBar";
 import Logo from "./constants/Logo";
+import SortViewOptions from "./constants/SortViewOptions";
 
 // UI
 import {
@@ -130,10 +131,33 @@ import {
 } from "./ui/Card";
 import { Toggle, toggleVariants } from "./ui/Toggle";
 import { Checkbox } from "./ui/Checkbox";
+import {
+    Select,
+    SelectGroup,
+    SelectValue,
+    SelectTrigger,
+    SelectContent,
+    SelectLabel,
+    SelectItem,
+    SelectSeparator,
+    SelectScrollUpButton,
+    SelectScrollDownButton,
+} from "./ui/Select";
 
 import { PostMocks } from "../Mocks";
 
 export {
+    Select,
+    SelectGroup,
+    SelectValue,
+    SelectTrigger,
+    SelectContent,
+    SelectLabel,
+    SelectItem,
+    SelectSeparator,
+    SelectScrollUpButton,
+    SelectScrollDownButton,
+    SortViewOptions,
     UserMain,
     Deals,
     Created,
