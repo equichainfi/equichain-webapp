@@ -32,6 +32,7 @@ import Collected from "./dashboard/user/Collected";
 import Favorites from "./dashboard/user/Favorites";
 import OffersMade from "./dashboard/user/OffersMade";
 import OffersRecieved from "./dashboard/user/OffersRecieved";
+import Content from "./dashboard/user/Content";
 
 // CONSTANTS
 import Footer from "./constants/Footer";
@@ -147,6 +148,7 @@ import {
 import { PostMocks } from "../Mocks";
 
 export {
+    Content,
     Select,
     SelectGroup,
     SelectValue,

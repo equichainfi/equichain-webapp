@@ -18,7 +18,7 @@ import {
     Twitter,
 } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SmallLogoPlain } from "../../../../public";
 import copy from "clipboard-copy";
 import { usePathname } from "next/navigation";
@@ -46,6 +46,12 @@ export default function Header() {
     );
     const [profilePhoto, setProfilePhoto] =
         useState<string>("/images/Logo.svg");
+
+    useEffect(() => {
+        const dataFromLS: string | null =
+            localStorage.getItem("selectedOption");
+        setSelectedOption(dataFromLS as string);
+    }, [selectedOption]);
 
     return (
         <main className="w-screen">
@@ -256,6 +262,10 @@ export default function Header() {
                                         )}
                                         onClick={() => {
                                             setSelectedOption(option);
+                                            localStorage.setItem(
+                                                "selectedOption",
+                                                option,
+                                            );
                                         }}
                                     >
                                         {option}
